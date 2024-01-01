@@ -71,7 +71,7 @@
                     var inputVal = $(this).val();
                     $(this).val(inputVal.replace(/[^0-9]/gi,''));
                 }
-                $(this).val($(this).val().replace(',', ''));
+                $(this).val($(this).val().replace(/,/gi, ''));
                 $(this).val($(this).val().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
             });
 
@@ -91,9 +91,9 @@
 
         function caltax() {
             try {
-                var inputpriceVal = $("#inputprice").val().replace(',', '');
-                var inputtaxVal = $("#inputtax").val().replace(',', '');
-                var inputmeterVal = $("#inputmeter").val().replace(',', '');
+                var inputpriceVal = $("#inputprice").val().replace(/,/gi, '');
+                var inputtaxVal = $("#inputtax").val().replace(/,/gi,'');
+                var inputmeterVal = $("#inputmeter").val().replace(/,/gi, '');
 
                 if(inputpriceVal>0) {
                     if (inputpriceVal*0.3 > 50000 ) {
