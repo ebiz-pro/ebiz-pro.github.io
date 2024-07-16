@@ -2,8 +2,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 	<head> 
-<script type="text/javascript" src="https://pcw-stg.eqlstore.com/eql_pc/resources/js/gp_ga.js?timestamp=20230816112356"></script>
-<script type="text/javascript" src="https://pcw-stg.eqlstore.com/eql_pc/resources/js/mkt.js?timestamp=20230816112356"></script>
 <noscript>
     <img height="1" width="1" src="https://www.facebook.com/tr?id=718582142277442&ev=PageView&noscript=1"/>
 </noscript>
@@ -89,29 +87,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 		<meta name="robots" content="noindex, nofollow" />
-		<meta name="description" content="EQL STORE"/>
-
-		<meta property="og:type" content="website"/>
-		<meta property="og:site_name" content="EQL STORE"/>
-		<meta property="og:locale:alternate" content="ko_KR"/>
-		<meta property="og:image" name="og_image" content="http://pcw-stg.eqlstore.com/eql_pc/resources/images/common/share_EQL.jpg"/>
-		<meta property="og:title" name="og_title" content="EQL STORE" />
-		<meta property="og:url" name="og_url" content="https://www.eqlstore.com/main"/>
-		<meta property="og:description" name="og_desc" content=''/>
-
-		<meta name="twitter:card" content="summary"/>
-		<meta name="twitter:title" content="EQL STORE"/>
-		<meta name="twitter:url" content="https://www.eqlstore.com/"/>
-		<meta name="twitter:image" content="http://pcw-stg.eqlstore.com/eql_pc/resources/images/common/share_EQL.jpg"/>
-		<meta name="twitter:description" content="">
-
-		<meta name="format-detection" content="telephone=no, address=no, email=no"/>
-		<meta name="pageContext.response.locale.language" content="ko" />
-		<meta name="_csrf" content="ba8033a5-d337-4dd6-9ba9-44b82963bf2e" />
-		<meta name="_csrf_header" content="X-CSRF-TOKEN" />
-		<meta name="_csrf.parameter" content="_csrf" />
-
-		<meta name="google-site-verification" content="NaIPxDB6fTE1mYzJ74rU4iAmiZfuy_GpixJhg5t_uw8" />
 		<title>한섬 EQL</title>
 
 <!-- Vendors CSS
@@ -123,17 +98,11 @@
 		================================================== -->
 		<script type="text/javascript" src="https://pcw-stg.eqlstore.com/eql_pc/resources/js/uiux/jquery-3.6.0.min.js?timestamp=20230816112356"></script>
 		<script type="text/javascript" src="https://pcw-stg.eqlstore.com/eql_pc/resources/js/uiux/jquery-ui.min.js?timestamp=20230816112356"></script>
-		<script type="text/javascript" src="https://pcw-stg.eqlstore.com/eql_pc/resources/js/uiux/swiper-bundle.min.js?timestamp=20230816112356"></script>
-		<script type="text/javascript" src="https://pcw-stg.eqlstore.com/eql_pc/resources/js/uiux/OverlayScrollbars.js?timestamp=20230816112356"></script>
 		<script type="text/javascript" src="https://pcw-stg.eqlstore.com/eql_pc/resources/js/uiux/ui_common.js?timestamp=20230816112356"></script>
 		<script type="text/javascript" src="https://pcw-stg.eqlstore.com/eql_pc/resources/js/uiux/jquery.mCustomScrollbar.concat.min.js?timestamp=20230816112356"></script>
-		<script type="text/javascript" src="https://pcw-stg.eqlstore.com/eql_pc/resources/js/display/sns_share.js?timestamp=20230816112356"></script>
 		<!-- UI JavaScript
 		================================================== -->
 		<script type="text/javascript" src="https://pcw-stg.eqlstore.com/eql_pc/resources/js/front_ui.js?timestamp=20230816112356"></script>
-
-
-
 		<style>@keyframes marqueeAnimation-830954  { 100%  {transform:translateX(-1519.2px)}}</style><style>@keyframes marqueeAnimation-8309540  { 100%  {transform:translateX(-1519.2px)}}</style>
 
 	
@@ -148,11 +117,6 @@
 		</header> -->
 		
 		<div class="wrap">
-			<script>
-	/* hpoint sso URL */
-	var hpoint_sso_url = "https" + '://' + "ssodev.h-point.co.kr" + ':' + "29865"
-</script>
-<script type="text/javascript" src="https://pcw-stg.eqlstore.com/eql_pc/resources/js/hpoint/SsoAjax.js?timestamp=20230816112356"></script>
 
 <!-- EQL 가입동의 modal-->
  <div class="modal_wrap" id="dialogcombineMemGuideGnb">
@@ -3561,44 +3525,6 @@
 	</div>
 <!-- // Modal Dimmed M -->
 
-<script type="text/javascript">
-$(document).ready(function() {
-	$("#ui-id-1-menu").click(function(){
-		var openNewWindow = window.open("about:blank");
-		openNewWindow.location.href = $("select[name=familySelect]").val();
-	});
-});
-
-/*회사소개페이지 새창으로 열기*/
-function goCompanyIntroPage(){
-	window.open("https://www.handsome.co.kr", "HYUNDAI HANDSOME");
-}
-</script>
-
-	
-<script>
-	(function(){
-		const urlHref = new URL(document.location.href);
-		const urlRef = document.referrer !== '' ? new URL(document.referrer) : null;
-		
-		const param1 = urlHref.searchParams.get('CPS_TYPE');
-		const param2 = urlRef !== null ? urlRef.searchParams.get('CPS_TYPE') : null;
-
-		if(param1 === 'LTK' || param2 === 'LTK'){
-			// CPS_TYPE 쿠키 셋팅
-			setCookie('CPS_TYPE', 'LTK', 20, 'eqlstore.com');
-
-			const target = 'LPINFO'
-			const lpCookie = getCookie(target);
-			if(typeof(lpCookie) !== 'undefined'){
-				// LP 쿠키 삭제 처리
-				deleteCookie(target, 'eqlstore.com');
-				console.log('%c[CPS] LP -> LTK | \'%s\' deleted', "color:#ff752a;", target);
-			}
-		}
-	})();
-</script>
-<script src="https://pzapi-nb.com/b/1101l692/1101l83.js"></script>
 </footer>
 					<!-- </div> -->
 				</div>
