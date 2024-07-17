@@ -89,12 +89,12 @@ select {width:100%;  padding:0 16px; font-size: 14px; color:var(--input-color); 
 .input_clear button.hidden {visibility: hidden;} */
 .input_clear .clear_btn { display: none; position: absolute; top:1px; right:1px; height:46px; width:40px; background: var(--bg-color-white); border-radius: 2px;}
 .input_clear .clear_btn.on { display: block; z-index: 1;}
-.input_clear .clear_btn:before {content:''; display:block; margin:0 auto; height:15px; width:15px; background:url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_input_clear.png') no-repeat 50% 50%; background-size:14px 14px;}
+.input_clear .clear_btn:before {content:''; display:block; margin:0 auto; height:15px; width:15px; background:url('./images/uiux/icon/ico_input_clear.png') no-repeat 50% 50%; background-size:14px 14px;}
 .input_clear .clear_btn.visibile {visibility: visible;}
 .input_clear .clear_btn.hidden {visibility: hidden;}
 .input_clear.has_unit .clear_btn { position: relative; flex: 0 0 40px;}
 
-.input_clear.search:after {content:''; display:block; position: absolute; top:4px; right:3px; width:40px; height:40px; background:url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_search_20.png') no-repeat center/ 20px 20px; }
+.input_clear.search:after {content:''; display:block; position: absolute; top:4px; right:3px; width:40px; height:40px; background:url('./images/uiux/icon/ico_search_20.png') no-repeat center/ 20px 20px; }
 .input_clear.search input {padding:0 40px 0 15px;}
 
 
