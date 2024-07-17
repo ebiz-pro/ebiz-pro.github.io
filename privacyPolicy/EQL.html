@@ -6,93 +6,7 @@
     <script type="text/javascript" id="www-widgetapi-script" src="./EQL_files/www-widgetapi.js" async=""></script>
     <link href="./EQL_files/pc-c9334d1331a67b88a5bbb28c4c16b01ef5184ab1c165983eb0e8207debdf3b2d.css" rel="stylesheet" type="text/css">
     <!-- [MKT_KakaoPixel] import -->
-    <script type="text/javascript" charset="UTF-8" src="./EQL_files/kp.js"></script>
-    <!-- [MKT_Criteo] import -->
-    <script type="text/javascript" src="./EQL_files/ld.js" async="true"></script>
-    <script>
-      // Device Domain Redirect
-      (function() {
-        var eqlMoServiceUrl = "https://m.eqlstore.com";
-        try {
-          const isMobile = /Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-          if (isMobile == true) {
-            location.replace(eqlMoServiceUrl + location.pathname + location.search);
-          }
-        } catch (e) {
-          console.error('redirect err :: \n' + e);
-        }
-      })();
-      // [MKT_FacebookPixel] S:init
-      try {
-        ! function(f, b, e, v, n, t, s) {
-          if (f.fbq) return;
-          n = f.fbq = function() {
-            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-          };
-          if (!f._fbq) f._fbq = n;
-          n.push = n;
-          n.loaded = !0;
-          n.version = '2.0';
-          n.queue = [];
-          t = b.createElement(e);
-          t.async = !0;
-          t.src = v;
-          s = b.getElementsByTagName(e)[0];
-          s.parentNode.insertBefore(t, s);
-        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '718582142277442');
-        fbq('track', 'PageView');
-      } catch (e) {
-        console.log(e);
-      }
-      // [MKT_FacebookPixel] E:init
-      // [MKT_RecoPick] S:init
-      function getRecopickUID() {
-        const currentTime = new Date();
-        const randomValue = +Math.floor(1000000000 + Math.random() * 9000000000, );
-        const expirationTime = new Date(currentTime.getTime() + 60 * 24 * 60 * 60 * 1000, );
-        const cookieValue = currentTime.getTime() + randomValue;
-        const cookieString = "recoPickUid=" + cookieValue + "; expires=" + expirationTime.toUTCString() + "; domain=.eqlstore.com; path=/"
-        document.cookie = cookieString;
-        return cookieValue;
-      }
-      try {
-        (function(w, d, n, s, e, o) {
-          w[n] = w[n] || function() {
-            (w[n].q = w[n].q || []).push(arguments)
-          };
-          e = d.createElement(s);
-          e.async = 1;
-          e.charset = 'utf-8';
-          e.src = '//static.recopick.com/dist/production.min.js';
-          o = d.getElementsByTagName(s)[0];
-          o.parentNode.insertBefore(e, o);
-        })(window, document, 'recoPick', 'script');
-        //uid 추가
-        const cookies = document.cookie.split(';');
-        let existingCookieValue = null;
-        for (const cookie of cookies) {
-          const [name, value] = cookie.trim().split('=');
-          if (name === 'recoPickUid') {
-            existingCookieValue = value;
-            break;
-          }
-        }
-        const recoPickUid = existingCookieValue || getRecopickUID();
-        recoPick('service', 'eqlstore.com'); // 반드시 필요한 부분
-        recoPick('setUID', recoPickUid);
-        recoPick('sendLog', 'visit');
-      } catch (e) {
-        console.log(e);
-      }
-      // [MKT_RecoPick] E:init
-      // [MKT_KakaoPixel] 페이지 기록
-      try {
-        kakaoPixel('543047391215005823').pageView();
-      } catch (e) {
-        console.log(e);
-      }
-    </script>
+
     <noscript>
       <img height="1" width="1" src="https://www.facebook.com/tr?id=718582142277442&ev=PageView&noscript=1" />
     </noscript>
@@ -123,23 +37,20 @@
     <!-- Vendors CSS
 		================================================== -->
     <!-- S:Import CSS Files -->
-    <link type="text/css" rel="stylesheet" href="./EQL_files/ui_common.css">
-    <link type="text/css" rel="stylesheet" href="./EQL_files/reset.css">
-    <link type="text/css" rel="stylesheet" href="./EQL_files/librarys.css">
-    <link type="text/css" rel="stylesheet" href="./EQL_files/table.css">
-    <link type="text/css" rel="stylesheet" href="./EQL_files/list.css">
-    <link type="text/css" rel="stylesheet" href="./EQL_files/header.css">
-    <link type="text/css" rel="stylesheet" href="./EQL_files/icon_btn_etc.css">
-    <link type="text/css" rel="stylesheet" href="./EQL_files/product.css">
-    <link type="text/css" rel="stylesheet" href="./EQL_files/category.css">
-    <link type="text/css" rel="stylesheet" href="./EQL_files/mycart.css">
-    <link type="text/css" rel="stylesheet" href="./EQL_files/etc.css">
-    <link type="text/css" rel="stylesheet" href="./EQL_files/form.css">
+    <link type="text/css" rel="stylesheet" href="./css/ui_common.css">
+    <link type="text/css" rel="stylesheet" href="./css/reset.css">
+    <link type="text/css" rel="stylesheet" href="./css/librarys.css">
+    <link type="text/css" rel="stylesheet" href="./css/table.css">
+    <link type="text/css" rel="stylesheet" href="./css/list.css">
+    <link type="text/css" rel="stylesheet" href="./css/header.css">
+    <link type="text/css" rel="stylesheet" href="./css/icon_btn_etc.css">
+    <link type="text/css" rel="stylesheet" href="./css/product.css">
+    <link type="text/css" rel="stylesheet" href="./css/category.css">
+    <link type="text/css" rel="stylesheet" href="./css/mycart.css">
+    <link type="text/css" rel="stylesheet" href="./css/etc.css">
+    <link type="text/css" rel="stylesheet" href="./css/form.css">
     <!-- E:Import CSS Files -->
     <!-- S:Import JS Files -->
-    <script type="text/javascript" src="./EQL_files/api_ch.js"></script>
-    <!-- E:Import JS Files -->
-    <input type="hidden" id="chApiDomain" name="chApiDomain" value="https://chat.eqlstore.com/">
     <!-- Custom styles for this template
 		================================================== -->
     <!-- Vendors javascript
@@ -943,7 +854,7 @@
       <script type="text/javascript">
         $(document).ready(function() {
           try {
-            const url = "https://chat.eqlstore.com/v1/promotion/gnb?&device=p";
+            const url = "https://chat.eqlstore.com/v1/promotion/gnb?device=p";
             const apiGnb = eqlRenderUI();
             apiGnb.renderGnb(url);
           } catch (error) {
