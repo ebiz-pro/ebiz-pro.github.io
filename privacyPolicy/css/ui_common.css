@@ -85,7 +85,7 @@ http://scripts.sil.org/OFL
     font-family: 'Pretendard'; 
     font-weight: 700; 
     font-display: swap; 
-    src: local('Pretendard Bold'), url('../fonts/uiux/Pretendard-Bold.woff2') format('woff2'), url('../fonts/uiux/Pretendard-Bold.woff') format('woff'), url('../fonts/uiux/Pretendard-Bold.otf') format('truetype'); 
+    src: local('Pretendard Bold'), url('../fonts/Pretendard-Bold.woff2') format('woff2'), url('../fonts/Pretendard-Bold.woff') format('woff'), url('../fonts/Pretendard-Bold.otf') format('truetype'); 
     unicode-range: 'U+AC00-D7A3'; 
         } 
     
@@ -93,7 +93,7 @@ http://scripts.sil.org/OFL
     font-family: 'Pretendard'; 
     font-weight: 500; 
     font-display: swap; 
-    src: local('Pretendard Medium'), url('../fonts/uiux/Pretendard-Medium.woff2') format('woff2'), url('../fonts/uiux/Pretendard-Medium.woff') format('woff'), url('../fonts/uiux/Pretendard-Medium.otf') format('truetype');  
+    src: local('Pretendard Medium'), url('../fonts/Pretendard-Medium.woff2') format('woff2'), url('../fonts/Pretendard-Medium.woff') format('woff'), url('../fonts/Pretendard-Medium.otf') format('truetype');  
     unicode-range: 'U+AC00-D7A3'; 
         }
     
@@ -101,7 +101,7 @@ http://scripts.sil.org/OFL
     font-family: 'Pretendard'; 
     font-weight: 400; 
     font-display: swap; 
-    src: local('Pretendard Regular'), url('../fonts/uiux/Pretendard-Regular.woff2') format('woff2'), url('../fonts/uiux/Pretendard-Regular.woff') format('woff'), url('../fonts/uiux/Pretendard-Regular.otf') format('truetype'); 
+    src: local('Pretendard Regular'), url('../fonts/Pretendard-Regular.woff2') format('woff2'), url('../fonts/Pretendard-Regular.woff') format('woff'), url('../fonts/Pretendard-Regular.otf') format('truetype'); 
     unicode-range: 'U+AC00-D7A3'; 
         } 
     
@@ -111,83 +111,83 @@ http://scripts.sil.org/OFL
         font-family: 'GT-America';
         font-style: italic;
         font-weight: 900;
-        src:  url('../fonts/uiux/GT-America-Standard-Bold-Italic.woff2') format('woff2'), url('../fonts/uiux/GT-America-Standard-Bold-Italic.woff') format('woff'), url('../fonts/uiux/GT-America-Standard-Bold-Italic.ttf') format('truetype');
+        src:  url('../fonts/GT-America-Standard-Bold-Italic.woff2') format('woff2'), url('../fonts/GT-America-Standard-Bold-Italic.woff') format('woff'), url('../fonts/GT-America-Standard-Bold-Italic.ttf') format('truetype');
     }
     
     @font-face {
         font-family:  'GT-America';
         font-style: normal;
         font-weight: 900;
-        src: url('../fonts/uiux/GT-America-Standard-Bold.woff2') format('woff2'), url('../fonts/uiux/GT-America-Standard-Bold.woff') format('woff'), url('../fonts/uiux/GT-America-Standard-Bold.ttf') format('truetype');
+        src: url('../fonts/GT-America-Standard-Bold.woff2') format('woff2'), url('../fonts/GT-America-Standard-Bold.woff') format('woff'), url('../fonts/GT-America-Standard-Bold.ttf') format('truetype');
     }
     
     @font-face {
         font-family:  'GT-America';
         font-style: italic;
         font-weight: 700;
-        src: url('../fonts/uiux/GT-America-Standard-Medium-Italic.woff2') format('woff2'), url('../fonts/uiux/GT-America-Standard-Medium-Italic.woff') format('woff'), url('../fonts/uiux/GT-America-Standard-Medium-Italic.ttf') format('truetype');
+        src: url('../fonts/GT-America-Standard-Medium-Italic.woff2') format('woff2'), url('../fonts/GT-America-Standard-Medium-Italic.woff') format('woff'), url('../fonts/GT-America-Standard-Medium-Italic.ttf') format('truetype');
     }
     @font-face {
         font-family:  'GT-America';
         font-style: normal;
         font-weight: 700;
-        src: url('../fonts/uiux/GT-America-Standard-Medium.woff2') format('woff2'), url('../fonts/uiux/GT-America-Standard-Medium.woff') format('woff'), url('../fonts/uiux/GT-America-Standard-Medium.ttf') format('truetype');
+        src: url('../fonts/GT-America-Standard-Medium.woff2') format('woff2'), url('../fonts/GT-America-Standard-Medium.woff') format('woff'), url('../fonts/GT-America-Standard-Medium.ttf') format('truetype');
     }
     
     @font-face {
         font-family:  'GT-America';
         font-style: italic;
         font-weight: 500;
-        src: url('../fonts/uiux/GT-America-Standard-Regular-Italic.woff2') format('woff2'), url('../fonts/uiux/GT-America-Standard-Regular-Italic.woff') format('woff'), url('../fonts/uiux/GT-America-Standard-Regular-Italic.ttf') format('truetype');
+        src: url('../fonts/GT-America-Standard-Regular-Italic.woff2') format('woff2'), url('../fonts/GT-America-Standard-Regular-Italic.woff') format('woff'), url('../fonts/GT-America-Standard-Regular-Italic.ttf') format('truetype');
     }
     
     @font-face {
         font-family:  'GT-America';
         font-style: normal;
         font-weight: 500;
-        src:url('../fonts/uiux/GT-America-Standard-Regular.woff2') format('woff2'), url('../fonts/uiux/GT-America-Standard-Regular.woff') format('woff'), url('../fonts/uiux/GT-America-Standard-Regular.ttf') format('truetype');
+        src:url('../fonts/GT-America-Standard-Regular.woff2') format('woff2'), url('../fonts/GT-America-Standard-Regular.woff') format('woff'), url('../fonts/GT-America-Standard-Regular.ttf') format('truetype');
     }
     
     @font-face {
         font-family:  'GT-America';
         font-style: italic;
         font-weight: 400;
-        src:url('../fonts/uiux/GT-America-Standard-Light-Italic.woff2') format('woff2'), url('../fonts/uiux/GT-America-Standard-Light-Italic.woff'), url('../fonts/uiux/GT-America-Standard-Light-Italic.ttf') format('truetype');
+        src:url('../fonts/GT-America-Standard-Light-Italic.woff2') format('woff2'), url('../fonts/GT-America-Standard-Light-Italic.woff'), url('../fonts/GT-America-Standard-Light-Italic.ttf') format('truetype');
     }
     
     @font-face {
         font-family:  'GT-America';
         font-style: normal;
         font-weight: 400;
-        src: url('../fonts/uiux/GT-America-Standard-Light.woff2') format('woff2'), url('../fonts/uiux/GT-America-Standard-Light.woff') format('woff'), url('../fonts/uiux/GT-America-Standard-Light.ttf') format('truetype');
+        src: url('../fonts/GT-America-Standard-Light.woff2') format('woff2'), url('../fonts/GT-America-Standard-Light.woff') format('woff'), url('../fonts/GT-America-Standard-Light.ttf') format('truetype');
     }
     
     @font-face {
         font-family:  'GT-America';
         font-style: italic;
         font-weight: 300;
-        src: url('../fonts/uiux/GT-America-Standard-Light-Italic.woff2') format('woff2'), url('../fonts/uiux/GT-America-Standard-Light-Italic.woff') format('woff'), url('../fonts/uiux/GT-America-Standard-Light-Italic.ttf') format('truetype');
+        src: url('../fonts/GT-America-Standard-Light-Italic.woff2') format('woff2'), url('../fonts/GT-America-Standard-Light-Italic.woff') format('woff'), url('../fonts/GT-America-Standard-Light-Italic.ttf') format('truetype');
     }
     
     @font-face {
         font-family:  'GT-America';
         font-style: normal;
         font-weight: 300;
-        src: url('../fonts/uiux/GT-America-Standard-Light.woff2') format('woff2'), url('../fonts/uiux/GT-America-Standard-Light.woff') format('woff'), url('../fonts/uiux/GT-America-Standard-Black-Light.ttf') format('truetype');
+        src: url('../fonts/GT-America-Standard-Light.woff2') format('woff2'), url('../fonts/GT-America-Standard-Light.woff') format('woff'), url('../fonts/GT-America-Standard-Black-Light.ttf') format('truetype');
     }
 
     @font-face {
         font-family:  'GT-America';
         font-style: normal;
         font-weight: 300;
-        src: url('../fonts/uiux/GT-America-Standard-Light.woff2') format('woff2'), url('../fonts/uiux/GT-America-Standard-Light.woff') format('woff'), url('../fonts/uiux/GT-America-Standard-Black-Light.ttf') format('truetype');
+        src: url('../fonts/GT-America-Standard-Light.woff2') format('woff2'), url('../fonts/GT-America-Standard-Light.woff') format('woff'), url('../fonts/GT-America-Standard-Black-Light.ttf') format('truetype');
     }
     
     @font-face {
         font-family:  'NotoSansKR';
         font-style: normal;
         font-weight: 500;
-        src: url('../fonts/uiux/NotoSansKR-Medium.woff2') format('woff2'),url('../fonts/uiux//NotoSansKR-Medium.woff') format('woff'),url('../fonts/uiux/NotoSansKR-Medium.otf') format('opentype');
+        src: url('../fonts/NotoSansKR-Medium.woff2') format('woff2'),url('../fonts//NotoSansKR-Medium.woff') format('woff'),url('../fonts/NotoSansKR-Medium.otf') format('opentype');
     }
     
 
