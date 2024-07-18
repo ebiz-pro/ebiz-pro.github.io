@@ -1,6 +1,6 @@
 @charset "utf-8"; 
 
-@import url(./ui_common.css);
+@import url(./css/ui_common.css);
 @import url(./css/uiux/reset.css);
 @import url(./css/uiux/librarys.css);
 @import url(./css/uiux/table.css);
