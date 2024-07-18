@@ -1,16 +1,16 @@
 @charset "utf-8"; 
 
-@import url(./css/ui_common.css);
-@import url(./css/reset.css);
-@import url(./css/librarys.css);
-@import url(./css/table.css);
-@import url(./css/list.css);
-@import url(./css/header.css);
-@import url(./css/icon_btn_etc.css);
-@import url(./css/product.css);
-@import url(./css/category.css);
-@import url(./css/mycart.css);
-@import url(./css/etc.css);
+@import url(/privacyPolicy/css/ui_common.css);
+@import url(/privacyPolicy/css/reset.css);
+@import url(/privacyPolicy/css/librarys.css);
+@import url(/privacyPolicy/css/table.css);
+@import url(/privacyPolicy/css/list.css);
+@import url(/privacyPolicy/css/header.css);
+@import url(/privacyPolicy/css/icon_btn_etc.css);
+@import url(/privacyPolicy/css/product.css);
+@import url(/privacyPolicy/css/category.css);
+@import url(/privacyPolicy/css/mycart.css);
+@import url(/privacyPolicy/css/etc.css);
 
 .img_content img        {width:100%;}
 
