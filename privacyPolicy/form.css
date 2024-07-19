@@ -308,7 +308,7 @@ form.search_fillter_wrap .input_clear.search{ width:220px }
 .custom_select_wrap.is_active { border: 1px solid var(--line-color) }
 .custom_select_wrap + .custom_select_wrap { margin-top: 10px; }
 .option_selected { position: relative; width: 100%; height: 48px; line-height: 48px; text-align: left; padding-right:20px; text-overflow: ellipsis; white-space:nowrap; overflow:hidden;}
-.option_selected::after { position:absolute; top: 50%; right: 0; margin-top: -7px; content: ''; display: block; width: 15px; height: 15px; background: url('../images/uiux/icon/ico_open.png') no-repeat center center/15px 15px;}
+.option_selected::after { position:absolute; top: 50%; right: 0; margin-top: -7px; content: ''; display: block; width: 15px; height: 15px; background: url('./images/uiux/icon/ico_open.png') no-repeat center center/15px 15px;}
 .custom_select_wrap.is_active .option_selected::after {transform: rotate(180deg);}
 .option_list { display: none; max-height: 288px; border-top: 1px solid var(--line-color-gray);  overflow: auto;}
 .option_list::-webkit-scrollbar { position: absolute; right: 3px; width: 3px; height: 0px; background-color: transparent;}
@@ -324,7 +324,7 @@ form.search_fillter_wrap .input_clear.search{ width:220px }
 
 .custom_select_wrap.float_type { position:relative; min-width: 136px; padding: 0; border: 0;}
 .custom_select_wrap.float_type .option_selected { position: relative; width: 100%; height: auto; line-height: 1.2; text-align: right; padding:0 20px 0 30px; text-overflow: ellipsis; white-space:nowrap; overflow:hidden;}
-.custom_select_wrap.float_type .option_selected::after { position:absolute; top: 50%; right: 0; margin-top: -7px; content: ''; display: block; width: 15px; height: 15px; background: url('../images/uiux/icon/ico_open.png') no-repeat center center/15px 15px;}
+.custom_select_wrap.float_type .option_selected::after { position:absolute; top: 50%; right: 0; margin-top: -7px; content: ''; display: block; width: 15px; height: 15px; background: url('./images/uiux/icon/ico_open.png') no-repeat center center/15px 15px;}
 .custom_select_wrap.float_type.is_active .option_selected::after {transform: rotate(180deg);}
 .custom_select_wrap.float_type .option_list { display: none; position: absolute; top: calc(100% + 10px); width: 100%; background: var(--bg-color-white); border-top: 1px solid var(--line-color-gray); z-index: 100; overflow: unset;}
 .custom_select_wrap.float_type .option_list li { position: relative; border: 1px solid var(--btn-line-black); background: var(--bg-color-white)}
