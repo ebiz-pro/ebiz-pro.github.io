@@ -67,7 +67,7 @@ textarea[disabled]{padding:11px; font-size:14px; cfont-weight:normal; line-heigh
 
 textarea {padding:15px 20px; min-height:100px; resize: none;}
 textarea:focus { border-color: var(--line-color)}
-select {width:100%;  padding:0 16px; font-size: 14px; color:var(--input-color); background:var(--bg-color-white) url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_select_arrow.png') no-repeat right 0px top 50%; background-size:12px 8px; -webkit-appearance:none; appearance:none;} 
+select {width:100%;  padding:0 16px; font-size: 14px; color:var(--input-color); background:var(--bg-color-white) url('../images/uiux/icon/ico_select_arrow.png') no-repeat right 0px top 50%; background-size:12px 8px; -webkit-appearance:none; appearance:none;} 
 
 /* input */
 .input_error input {border-color:var(--line-color) !important;}
@@ -82,7 +82,7 @@ select {width:100%;  padding:0 16px; font-size: 14px; color:var(--input-color); 
 .input_clear input {padding:0 40px 0 15px;}
 .input_clear input:not(:read-only):focus {border-color:var(--line-color) !important;}
 /* .input_clear .clear_btn {position: absolute; top:0; right:0px; width:40px; height:40px; margin-top: -20px; background: transparent;display: none;}
-.input_clear .clear_btn:before {content:''; display:block; margin:0 auto; height:20px; width:20px; background:url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/icon_close_20.png') var(--bg-color-white) no-repeat center/contain;}
+.input_clear .clear_btn:before {content:''; display:block; margin:0 auto; height:20px; width:20px; background:url('../images/uiux/icon/icon_close_20.png') var(--bg-color-white) no-repeat center/contain;}
 .input_clear .clear_btn.on { display: block;}
 .input_clear .search_btn { display: flex; align-items: center; justify-content: center;}
 .input_clear button.visibile {visibility: visible;}
@@ -134,29 +134,29 @@ select {width:100%;  padding:0 16px; font-size: 14px; color:var(--input-color); 
 .checkbox input, .checkbox label::before, 
 .radio input, .radio label::before,
 .radioChk input, .radioChk label::before {width:20px; height:20px; left:0; top:1px;}
-.checkbox input:checked+label::before {background-image:url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_check_checked.png');}
+.checkbox input:checked+label::before {background-image:url('../images/uiux/icon/ico_check_checked.png');}
 /* .checkbox input:disabled+label::before {opacity: 0.4;} */
-.checkbox input:disabled+label::before {background-image:url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_check_disable.png');}
-.checkbox input:disabled:checked+label::before {background-image:url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_check_checked_disable.png');}
-.checkbox label::before {background-image:url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_check.png');}
+.checkbox input:disabled+label::before {background-image:url('../images/uiux/icon/ico_check_disable.png');}
+.checkbox input:disabled:checked+label::before {background-image:url('../images/uiux/icon/ico_check_checked_disable.png');}
+.checkbox label::before {background-image:url('../images/uiux/icon/ico_check.png');}
 
 /* 보더 없는 경웅 */
-.checkbox.no_border input:checked+label::before {background-image:url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_check_s_selected.png');}
-/* .checkbox.no_border input:disabled+label::before {background-image:url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_check_default_disable.png');} */
-/* .checkbox.no_border input:disabled:checked+label::before {background-image:url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_check_checked.png');opacity: 0.4;} */
-.checkbox.no_border label::before {background-image:url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_check_s_default.png');}
+.checkbox.no_border input:checked+label::before {background-image:url('../images/uiux/icon/ico_check_s_selected.png');}
+/* .checkbox.no_border input:disabled+label::before {background-image:url('../images/uiux/icon/ico_check_default_disable.png');} */
+/* .checkbox.no_border input:disabled:checked+label::before {background-image:url('../images/uiux/icon/ico_check_checked.png');opacity: 0.4;} */
+.checkbox.no_border label::before {background-image:url('../images/uiux/icon/ico_check_s_default.png');}
 .checkbox.no_border label, .radioChk.no_border label { font-size: 14px;}
 
 
-.radioChk input:checked+label::before {background-image:url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_check_checked.png');}
-.radioChk input:disabled+label::before {background-image:url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_check_disable.png');}
-.radioChk input:disabled:checked+label::before {background-image:url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_check_checked_disable.png');}
-.radioChk label::before {background-image:url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_check.png');}
+.radioChk input:checked+label::before {background-image:url('../images/uiux/icon/ico_check_checked.png');}
+.radioChk input:disabled+label::before {background-image:url('../images/uiux/icon/ico_check_disable.png');}
+.radioChk input:disabled:checked+label::before {background-image:url('../images/uiux/icon/ico_check_checked_disable.png');}
+.radioChk label::before {background-image:url('../images/uiux/icon/ico_check.png');}
 
-.radio label::before {background-image: url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_radio.png');}
-.radio input:checked+label::before {background-image:url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_radio_checked.png');}
-.radio input:disabled+label::before {background-image:url(pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/radiobtn_disable_default.png)}
-.radio input:checked:disabled+label::before {background-image:url(pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/radiobtn_disable_selected.png)}
+.radio label::before {background-image: url('../images/uiux/icon/ico_radio.png');}
+.radio input:checked+label::before {background-image:url('../images/uiux/icon/ico_radio_checked.png');}
+.radio input:disabled+label::before {background-image:url(../images/uiux/icon/radiobtn_disable_default.png)}
+.radio input:checked:disabled+label::before {background-image:url(../images/uiux/icon/radiobtn_disable_selected.png)}
 
 /* form list */
 .form_list_check.type1 button {vertical-align: top; width: 44px; margin-left: 8px; padding: 0;}
@@ -191,7 +191,7 @@ form.search_fillter_wrap .input_clear.search{ width:220px }
 .input_clear.search input[type="text"]{ height:38px }
 .input_clear.search:after {top:0px;}
 .input_clear.search .clear_btn      {height:38px; top:0;  }
-.input_clear.search .clear_btn:before {width:20px; height:20px; margin:0 0 0 9px; background: url(pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_input_clear_search.png) no-repeat 0 0; background-size:20px 20px;}
+.input_clear.search .clear_btn:before {width:20px; height:20px; margin:0 0 0 9px; background: url(../images/uiux/icon/ico_input_clear_search.png) no-repeat 0 0; background-size:20px 20px;}
 
 .search_brand_wrap{ display:flex; justify-content: flex-start; align-items: flex-start; width:calc(100% - 250px)}
 .search_result_wrap{ display:block; overflow: hidden; width:100%}
@@ -254,7 +254,7 @@ form.search_fillter_wrap .input_clear.search{ width:220px }
 /* 자동완성 선택한 리스트 */
 .search_txt_wrap { border-bottom: 1px solid var(--line-color-gray); }
 .search_txt_item { display: inline-flex; align-items: center; justify-content: space-between; }
-.search_txt_item .btn_del { display: inline-block; width: 14px; min-width: 14px; height: 14px; margin-left: 5px; background: url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_delete.png') no-repeat center /contain; border-radius: 50%; }
+.search_txt_item .btn_del { display: inline-block; width: 14px; min-width: 14px; height: 14px; margin-left: 5px; background: url('../images/uiux/icon/ico_delete.png') no-repeat center /contain; border-radius: 50%; }
 
 /* 자동완성 - 자동완성 결과 */
 .auto_complete_wrap { display: none; }
@@ -291,7 +291,7 @@ form.search_fillter_wrap .input_clear.search{ width:220px }
  .drop_box { flex-direction: column; z-index: 1; position: relative;}
  .drop_box .btn_drop { display: flex; align-items: center; justify-content: center; position: relative; width: 100%; height: 46px; padding: 0 20px; font-weight: 700;}
  /* todo 드롭다운 이미지 변경필요 */
- .drop_box .btn_drop:after {content: ''; display: inline-block;margin-left: 4px; width: 15px; height: 15px; background: url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_more.png') no-repeat center center/15px 15px; transition:.2s; }
+ .drop_box .btn_drop:after {content: ''; display: inline-block;margin-left: 4px; width: 15px; height: 15px; background: url('../images/uiux/icon/ico_more.png') no-repeat center center/15px 15px; transition:.2s; }
  .drop_box .btn_drop.on:after {transform: rotate(180deg);}
  .drop_box .drop_list { position: relative; display: none; width: 100%; overflow-y: auto;  }
  .drop_box .drop_list li { height: 46px; line-height: 46px;}
@@ -308,7 +308,7 @@ form.search_fillter_wrap .input_clear.search{ width:220px }
 .custom_select_wrap.is_active { border: 1px solid var(--line-color) }
 .custom_select_wrap + .custom_select_wrap { margin-top: 10px; }
 .option_selected { position: relative; width: 100%; height: 48px; line-height: 48px; text-align: left; padding-right:20px; text-overflow: ellipsis; white-space:nowrap; overflow:hidden;}
-.option_selected::after { position:absolute; top: 50%; right: 0; margin-top: -7px; content: ''; display: block; width: 15px; height: 15px; background: url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_open.png') no-repeat center center/15px 15px;}
+.option_selected::after { position:absolute; top: 50%; right: 0; margin-top: -7px; content: ''; display: block; width: 15px; height: 15px; background: url('../images/uiux/icon/ico_open.png') no-repeat center center/15px 15px;}
 .custom_select_wrap.is_active .option_selected::after {transform: rotate(180deg);}
 .option_list { display: none; max-height: 288px; border-top: 1px solid var(--line-color-gray);  overflow: auto;}
 .option_list::-webkit-scrollbar { position: absolute; right: 3px; width: 3px; height: 0px; background-color: transparent;}
@@ -324,7 +324,7 @@ form.search_fillter_wrap .input_clear.search{ width:220px }
 
 .custom_select_wrap.float_type { position:relative; min-width: 136px; padding: 0; border: 0;}
 .custom_select_wrap.float_type .option_selected { position: relative; width: 100%; height: auto; line-height: 1.2; text-align: right; padding:0 20px 0 30px; text-overflow: ellipsis; white-space:nowrap; overflow:hidden;}
-.custom_select_wrap.float_type .option_selected::after { position:absolute; top: 50%; right: 0; margin-top: -7px; content: ''; display: block; width: 15px; height: 15px; background: url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_open.png') no-repeat center center/15px 15px;}
+.custom_select_wrap.float_type .option_selected::after { position:absolute; top: 50%; right: 0; margin-top: -7px; content: ''; display: block; width: 15px; height: 15px; background: url('../images/uiux/icon/ico_open.png') no-repeat center center/15px 15px;}
 .custom_select_wrap.float_type.is_active .option_selected::after {transform: rotate(180deg);}
 .custom_select_wrap.float_type .option_list { display: none; position: absolute; top: calc(100% + 10px); width: 100%; background: var(--bg-color-white); border-top: 1px solid var(--line-color-gray); z-index: 100; overflow: unset;}
 .custom_select_wrap.float_type .option_list li { position: relative; border: 1px solid var(--btn-line-black); background: var(--bg-color-white)}
@@ -342,10 +342,10 @@ form.search_fillter_wrap .input_clear.search{ width:220px }
 .count_set input { width: 50px; height: 30px; border: none; border-radius: 0;border-top: 1px solid var(--line-color-gray01); border-bottom: 1px solid var(--line-color-gray01);  font-weight: 500; text-align: center;} 
 .count_set input,.count_set input:read-only { background-color: var(--bg-color-white); border-color: var(--line-color-gray01); color: var(--txt-color); } 
 .count_set button { width: 30px; height: 30px; text-indent: -9999px; overflow: hidden;  white-space: nowrap;}  
-.count_set button.minus { background: url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/btn_minus.png') no-repeat center center/contain;}
-.count_set button.plus { background: url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/btn_plus.png') no-repeat center center/contain;}
-.count_set button.minus:disabled { background-image: url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/btn_minus_disabled.png');}
-.count_set button.plus:disabled { background-image: url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/btn_plus_disabled.png');}
+.count_set button.minus { background: url('../images/uiux/icon/btn_minus.png') no-repeat center center/contain;}
+.count_set button.plus { background: url('../images/uiux/icon/btn_plus.png') no-repeat center center/contain;}
+.count_set button.minus:disabled { background-image: url('../images/uiux/icon/btn_minus_disabled.png');}
+.count_set button.plus:disabled { background-image: url('../images/uiux/icon/btn_plus_disabled.png');}
   
 .count_wrap { margin-top: 30px; max-height:200px; overflow: auto;}
 .count_wrap::-webkit-scrollbar { position: absolute; right: 3px; width: 3px; height: 0px; background-color: transparent;}
@@ -358,7 +358,7 @@ form.search_fillter_wrap .input_clear.search{ width:220px }
 .count_box .count_tit { display: inline-flex; align-items: center; margin-right: 20px; font-weight: 700; overflow: hidden;}
 .count_box .count_tit .option:first-child { white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
 .count_box .count_tit .option + .option { margin-left: 5px; }
-.count_box .btn_del {  flex: 0 0 auto; width: 14px; height: 14px; margin-left: 5px; background: url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_delete.png') no-repeat center /contain; border-radius: 50%; }
+.count_box .btn_del {  flex: 0 0 auto; width: 14px; height: 14px; margin-left: 5px; background: url('../images/uiux/icon/ico_delete.png') no-repeat center /contain; border-radius: 50%; }
 .count_box + .count_box { margin-top: 10px; }
 /* 가로 정렬 */
 .count_box.row { justify-content: flex-start;}
@@ -369,7 +369,7 @@ form.search_fillter_wrap .input_clear.search{ width:220px }
 .total_box .total { font-size: 20px; font-weight: 700;}
 
 .msg { display: inline-flex; align-items: center; margin-top: 6px; color: var(--txt-color-gray); font-size: 12px; font-weight: 500;}
-.msg::before { content: ''; display: inline-block; width: 14px; height: 14px; margin-right: 5px; background: url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_comment.png') no-repeat center /contain; }
+.msg::before { content: ''; display: inline-block; width: 14px; height: 14px; margin-right: 5px; background: url('../images/uiux/icon/ico_comment.png') no-repeat center /contain; }
 .msg.error { color: var(--txt-point);}
 
 .total_box + .msg {margin-top: -5px;}
@@ -590,14 +590,14 @@ input.datepicker:read-only {  background: var(--bg-color-white); color: #000; -w
 .chip_white_brass { background-color: #c9ab29;}
 .chip_white { background-color: #ffffff; border: 1px solid #cccccc}
 .chip_silver { background-image: linear-gradient(135deg, #ebebeb, #c9c9c9);}
-.chip_stripe { background: url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/color_stripe.png') no-repeat center/contain;}
-.chip_etc { background: url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/color_etc.png') no-repeat center/contain;}
+.chip_stripe { background: url('../images/uiux/icon/color_stripe.png') no-repeat center/contain;}
+.chip_etc { background: url('../images/uiux/icon/color_etc.png') no-repeat center/contain;}
 
 
 
 /* checkbox 버튼 - 선택 상태 */
 .option_box .option label::after { content: ''; display: block;}
-.option_box .option input:checked+label::after {background: url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_arrow2.png') no-repeat center /contain;}
+.option_box .option input:checked+label::after {background: url('../images/uiux/icon/ico_arrow2.png') no-repeat center /contain;}
 
 /* checkbox 버튼 - 선택 상태 */
 .option_box .option input + label { border-radius: 3px; border: 1px solid var(--btn-line-gray); background-color: var(--bg-color-white); }
@@ -606,9 +606,9 @@ input.datepicker:read-only {  background: var(--bg-color-white); color: #000; -w
 .option_box .option {position:relative; display:inline-flex;}
 .option_box .option label { position: relative}
 .option_box .option label::after {content: ''; display: block; position: absolute; width:10px; height:10px; top: 50%; right: 15px; margin-top: -5px; background:none;}
-.option_box .option input:checked+label::after {background: url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_filter.png') no-repeat center /contain;}
+.option_box .option input:checked+label::after {background: url('../images/uiux/icon/ico_filter.png') no-repeat center /contain;}
 .option_box .option input:disabled+label {border:1px solid #ccc;  background:#f2f2f2; color:#b1b1b1; }
-.option_box .option input:checked:disabled+label::after {background-image: url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_check_disabled.png')}
+.option_box .option input:checked:disabled+label::after {background-image: url('../images/uiux/icon/ico_check_disabled.png')}
 
 /* form list */
 .form_list_check.type1 button:not(.tooltip_open) {vertical-align: top; min-width: 44px; margin-left: 8px; padding: 0;}
@@ -632,8 +632,8 @@ input.datepicker:read-only {  background: var(--bg-color-white); color: #000; -w
 .comment_form .attached .img_box { width: 120px; height: 120px;}
 .attached .img_box { position:relative; width: 100px; height: 100px;  margin-top: 20px; padding-bottom: 0; overflow: hidden;  cursor: pointer;}
 .attached .img_box + .img_box { margin-left: 4px; }
-/* .attached .img_box:before {content: ''; opacity: .7 ; position: absolute; right: 4px; top: 4px; width: 14px; height: 14px; background: url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_delete_dg.png') no-repeat center; background-size: 14px 14px; z-index:1} */
-.attached .img_box .btn_delete { position: absolute; right: 0px; top: 0px; width: 27px; height: 27px; background: url('pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_delete_dg.png') no-repeat center /15px 15px; }
+/* .attached .img_box:before {content: ''; opacity: .7 ; position: absolute; right: 4px; top: 4px; width: 14px; height: 14px; background: url('../images/uiux/icon/ico_delete_dg.png') no-repeat center; background-size: 14px 14px; z-index:1} */
+.attached .img_box .btn_delete { position: absolute; right: 0px; top: 0px; width: 27px; height: 27px; background: url('../images/uiux/icon/ico_delete_dg.png') no-repeat center /15px 15px; }
 .attached .img_crop {position: absolute; top: 0%; left: 0%; width: 100%; height: 100%; }
 .attached .img_crop img {width: 100%; height: 100%; object-fit: cover; border-radius: 0;}
 
@@ -772,7 +772,7 @@ html.twoway::-webkit-scrollbar		{ }
 .my_order_box .step .count { font-weight: 700;}
 .done_wrap .notice_txt { padding-top: 20px;}
 .modal .com_bg_box2 .info { font-weight: 400;}
-.full_search_wrap .input_clear.zip_search:before { background-image: url(pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_search_19.png);}
+.full_search_wrap .input_clear.zip_search:before { background-image: url(../images/uiux/icon/ico_search_19.png);}
 .radio.tooltip_ui .tooltip_wrap { top: 0;}
 .count_set input, .count_set input:read-only { -webkit-text-fill-color: #000; font-size:12px; }
 .write_list .attached .img_box { width: 120px; height: 120px;}
@@ -1020,9 +1020,9 @@ textarea.input_error,
 .prd_right_area .button_equal,
 .lookbook_brand .favorite .button_equal { width: 30px; min-width: 30px; height: 30px;}
 .prd_right_area .button_equal::before,
-.lookbook_brand .favorite .button_equal::before { width: 30px; height: 30px; background: url(pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_equal_30.png) no-repeat center /contain;}
+.lookbook_brand .favorite .button_equal::before { width: 30px; height: 30px; background: url(../images/uiux/icon/ico_equal_30.png) no-repeat center /contain;}
 .prd_right_area .button_equal.is_active::before,
-.lookbook_brand .favorite .button_equal.is_active::before { background: url(pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/icon/ico_equal_30_on.png) no-repeat center /contain;}
+.lookbook_brand .favorite .button_equal.is_active::before { background: url(../images/uiux/icon/ico_equal_30_on.png) no-repeat center /contain;}
 /* 셀렉트 디자인수정 */
 .custom_select_wrap { padding-left: 0; padding-right: 0;}
 .option_selected { padding-left: 14px; padding-right: 34px;}
@@ -1215,7 +1215,7 @@ header ~ .quick-menu.sps        {height:100px; }
 .prod-grid-list.col-5 li a.link_wrap    {display: block; padding: 15px;}
 .prod-grid-list.col-5 li .favorite_wrap    {margin:0 0 10px 0; padding:0 15px;}
 
-.prod-grid-list.col-5 li .thumb_area { position: relative; padding-bottom: 133%; overflow: hidden; z-index: 1; margin-bottom: 20px; background:url(pcw-stg.eqlstore.com/eql_pc/resources/images/uiux/common/no_thum.png) no-repeat 50% 50%; background-size: cover;  }
+.prod-grid-list.col-5 li .thumb_area { position: relative; padding-bottom: 133%; overflow: hidden; z-index: 1; margin-bottom: 20px; background:url(../images/uiux/icon/no_thum.png) no-repeat 50% 50%; background-size: cover;  }
 .prod-grid-list.col-5 li .thumb_area .thumb {position: absolute; top: 0; left: 0; width:100%; height:100%;}
 .prod-grid-list.col-5 li .thumb_area .thumb img {width: 100%; height: 100%; object-fit: cover;}
 .editor-wrap div .tab-wrap .tabs-outer.fixed .tabs   {top:100px}
