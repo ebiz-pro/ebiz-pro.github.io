@@ -1103,7 +1103,7 @@ body.renewed_widget { padding-left: 0 !important;}
 .ui-dialog-container .ui-widget.ui-widget-content .ui-button:focus,
 .ui-dialog-container .ui-widget.ui-widget-content .ui-button:hover   { top:50%; border:1px solid #ccc; background:#ededed; right:.3em }
 .ui-dialog-container .ui-widget.ui-widget-content .ui-widget-header   {font-size:18px; overflow: hidden; border:0; height:60px; line-height:60px; font-size:16px; border-bottom:1px solid #f2f2f2; background:#fff; text-align: center;  }
-.ui-dialog-container .ui-widget.ui-widget-content .ui-widget-header  .ui-button            {background:none; border:0; width:28px; height:28px; top:16px; margin:0; right:20px; background:url("../../images/uiux/icon/icon_p_close.png") no-repeat center}   
+.ui-dialog-container .ui-widget.ui-widget-content .ui-widget-header  .ui-button            {background:none; border:0; width:28px; height:28px; top:16px; margin:0; right:20px; background:url("../images/uiux/icon/icon_p_close.png") no-repeat center}   
 .ui-dialog-container .ui-widget.ui-widget-content .ui-widget-header  .ui-button .ui-icon       {background:none}   
 .ui-dialog-container .ui-dialog .ui-dialog-title     {font-size:18px;  margin:0; float:none; width:100%; }
 .ui-dialog-container .ui-helper-clearfix:before      {display:none; }
