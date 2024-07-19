@@ -208,14 +208,14 @@ http://scripts.sil.org/OFL
  input::-webkit-search-results-decoration{display:none;}
 
 .input_clear .search_btn { position: absolute;  top: 50%; right: 0px; width: 40px; height: 40px; margin-top: -25px; background: var(--bg-color-white); }
-.input_clear .search_btn:before { content:''; display: block; width: 40px; height: 40px; background: url('../../images/uiux/icon/icon_search_32.png') var(--bg-color-white) no-repeat 50% 50%/ 32px 32px}
+.input_clear .search_btn:before { content:''; display: block; width: 40px; height: 40px; background: url('../images/uiux/icon/icon_search_32.png') var(--bg-color-white) no-repeat 50% 50%/ 32px 32px}
 
 .input_clear.type2 { max-width: 840px; width: 100%; margin: 0 auto;}
 .input_clear.type2 input, 
 .input_clear.type2 input:read-only { height: auto; padding: 10px 0 18px; background-color: var(--bg-color-white); border: none; border-radius: 0; border-bottom: 2px solid var(--line-color); color: var(--txt-color); font-size: 28px; font-family: 'Pretendard';}
 .input_clear.type2 input::placeholder {font-size: 28px; color: var(--txt-color-gray02);}
 .input_clear.type2 .clear_btn { top: 50%;  width: 40px; height: 40px; margin-top: -25px;}
-.input_clear.type2 .clear_btn::before { width: 40px; height: 40px; background: url('../../images/uiux/icon/icon_close_32.png') var(--bg-color-white) no-repeat 50% 50%/ 32px 32px}
+.input_clear.type2 .clear_btn::before { width: 40px; height: 40px; background: url('../images/uiux/icon/icon_close_32.png') var(--bg-color-white) no-repeat 50% 50%/ 32px 32px}
 
 .input_result { display: flex; justify-content: center; margin: 60px 0; font-size: 20px; font-weight: 700;}
 .input_result.dot .list { position: relative; padding: 0 30px; color: var(--txt-color-gray); white-space: nowrap; font-weight: 500;}
@@ -333,14 +333,14 @@ http://scripts.sil.org/OFL
 .left_menu > li:hover {border-color: var(--line-color);}
 .left_menu > li.on > a { z-index: 1;  border-color: var(--line-color); box-shadow: 0px -2px 0px 0px var(--line-color) inset;}
 .left_menu > li.on > a:only-child {z-index: 1;  border-color: var(--line-color); box-shadow: 0px -2px 0px 0px var(--line-color) inset;}
-.left_menu > li.on > a:only-child::after {content:''; display:block; width:15px; height:15px; position:absolute; top:20px; right:0; z-index:1; background:url('../../images/uiux/icon/ico_arrow2.png') no-repeat;}
+.left_menu > li.on > a:only-child::after {content:''; display:block; width:15px; height:15px; position:absolute; top:20px; right:0; z-index:1; background:url('../images/uiux/icon/ico_arrow2.png') no-repeat;}
 .left_menu > li.closeOn > a {border-color: var(--line-color); box-shadow: 0px -2px 0px 0px var(--line-color) inset;}
 .left_menu > li > a > em      {display:inline-block; margin-bottom:5px;  vertical-align: 0; max-width:100%; line-height:20px; margin-right:10px; overflow: hidden; font-weight:700; white-space: nowrap; text-overflow: ellipsis; }
 .left_menu > li > a > span    {display:inline-block; margin-bottom:5px; vertical-align: 0px; max-width:100%; line-height:18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 12px; color:var(--txt-color-gray01);}
 .left_menu .sub_menu { display:none; padding: 6px 0; border-bottom: 1px solid var(--line-color-gray); background:var(--bg-color-gray04);  }
 .left_menu .sub_menu > li a {padding: 11px 46px 11px 24px; color: var(--txt-color-gray)}
 .left_menu .sub_menu li.on > a { color: var(--txt-color)}
-.left_menu .sub_menu li.on > a:only-child::after {content:''; display:block; width:15px; height:15px; position:absolute; top:14px; right:24px; z-index:1; background:url('../../images/uiux/icon/ico_arrow2.png') no-repeat;}
+.left_menu .sub_menu li.on > a:only-child::after {content:''; display:block; width:15px; height:15px; position:absolute; top:14px; right:24px; z-index:1; background:url('../images/uiux/icon/ico_arrow2.png') no-repeat;}
 .left_menu .sub_menu > li a em     {display:inline-block; vertical-align: middle;  margin:0 10px 0 0; font-weight:700; }
 .left_menu .sub_menu > li a span   {display:inline-block; vertical-align: middle; margin:0 0 0 0px; color:var(--txt-color-gray01); }
 .left_menu .sub_menu .s_menu{padding:2px 0;display:none}
@@ -366,10 +366,10 @@ http://scripts.sil.org/OFL
 .quick .top:before,
 .quick .share:before, 
 .quick .equal:before { content:''; display:block; width:26px; height:26px; margin:0 auto; background-size: 26px 26px;}
-.quick .top:before {  background:url('../../images/uiux/icon/ico_top.png') no-repeat 0 50%;} 
-.quick .share:before { background:url('../../images/uiux/icon/ico_share.png') no-repeat 0 50%;} 
-.quick .equal:before {background:url('../../images/uiux/icon/ico_equal_quick.png') no-repeat 0 50%;} 
-.quick .equal.is_active:before {background: url('../../images/uiux/icon/ico_equal_quick_on.png');}
+.quick .top:before {  background:url('../images/uiux/icon/ico_top.png') no-repeat 0 50%;} 
+.quick .share:before { background:url('../images/uiux/icon/ico_share.png') no-repeat 0 50%;} 
+.quick .equal:before {background:url('../images/uiux/icon/ico_equal_quick.png') no-repeat 0 50%;} 
+.quick .equal.is_active:before {background: url('../images/uiux/icon/ico_equal_quick_on.png');}
 .quick .top.scroll { opacity:1;}
 
 
@@ -383,7 +383,7 @@ http://scripts.sil.org/OFL
 .modal_wrap .toast { bottom: 96px;}
 
 .modal .modal_close_btn { position:absolute; z-index: 101; top:16px; right: 16px; display:block; width:28px; height: 28px; cursor: pointer;
-background:url("../../images/uiux/icon/icon_p_close.png") no-repeat center; font-size:0}  
+background:url("../images/uiux/icon/icon_p_close.png") no-repeat center; font-size:0}  
 /*.modal .modal_close_btn:before,
 .modal .modal_close_btn:after { position: absolute; top:7px; left: 12px; content:' '; height: 18px; width: 1px; background-color: var(--bg-color-black); } 
 .modal .modal_close_btn:before { transform: rotate(45deg); } 
@@ -506,7 +506,7 @@ body.modalPop       {overflow: hidden;}
 /* .g_preview.right.top { display: flex; justify-content: flex-end; align-items: flex-start; text-align: left; } 
 .tooltip { position: relative; display: flex; z-index: 10; }  
 .tooltip .btn_info { position: relative; display: inline-flex; z-index: 10; transition: all 0.2s ease;}                   
-.tooltip .btn_info:before {content:''; display:block; width:22px; height:22px; background:url('../../images/uiux/icon/ico_tooltip.png') no-repeat 50% 50%; background-size:18px 18px;}                   
+.tooltip .btn_info:before {content:''; display:block; width:22px; height:22px; background:url('../images/uiux/icon/ico_tooltip.png') no-repeat 50% 50%; background-size:18px 18px;}                   
 .tooltip .tooltip_body {visibility: hidden; display: block; position: absolute; min-width: 300px; min-height: 60px; padding:23px 20px; opacity: 0; transition: all 0.2s ease; background: var(--bg-color-white); border:1px solid var(--line-color); border-radius:2px;} 
 .tooltip.bottom .tooltip_body {top: 100%}
 .tooltip.top .tooltip_body {bottom: 100%}
@@ -521,7 +521,7 @@ body.modalPop       {overflow: hidden;}
 /* .tooltip_ui { position: relative; } */
 .tooltip_ui.is_positioned { position: relative; }
 .tooltip_ui .tooltip_open { position: relative; display: inline-flex; margin-top:2px;} 
-.tooltip_ui .tooltip_open::after {content:''; display:block; width:16px; height:16px; background:url('../../images/uiux/icon/ico_tooltip_g.png') no-repeat 50% 50%;}      
+.tooltip_ui .tooltip_open::after {content:''; display:block; width:16px; height:16px; background:url('../images/uiux/icon/ico_tooltip_g.png') no-repeat 50% 50%;}      
 .tooltip_wrap { position: absolute; top: 100%; margin-top: 3px; border: 1px solid var(--line-color); color: var(--txt-color); padding: 20px; background-color: var(--bg-color-white); border-radius:3px; z-index: 20;transition: all 0.5s ease; font-size: 13px; }
 .tooltip_ui.is_positioned .tooltip_wrap { min-width: 200px; }
 .tooltip_wrap.is_active { display: block; }
@@ -534,7 +534,7 @@ body.modalPop       {overflow: hidden;}
     border-bottom: 5px solid var(--bg-color-black);
     border-left: 4px solid transparent;
     border-right: 4px solid transparent; }
-.tooltip_ui.type_dark .tooltip_wrap .tooltip_close { position: absolute;  right: 8px; top: 8px; width: 24px; height: 24px; background: url('../../images/uiux/icon/ico_close_w_16.png') no-repeat center/14px 14px; }
+.tooltip_ui.type_dark .tooltip_wrap .tooltip_close { position: absolute;  right: 8px; top: 8px; width: 24px; height: 24px; background: url('../images/uiux/icon/ico_close_w_16.png') no-repeat center/14px 14px; }
 
 .tooltip_wrap .txt_nowrap { font-size: 14px; line-height:16px; white-space: nowrap; font-weight: 400;}
 .tooltip_wrap .point { color: var(--txt-point)}
@@ -762,17 +762,17 @@ strong.tit_lv2 { font-weight: 700;}
 
 .icon_cont .tip_txt { margin-top: 40px; text-align: center; color: var(--txt-color-gray)}
 
-.icon_cont .ico_tit.ico_complate {background: url('../../images/uiux/icon/ico_com_b_48.png') no-repeat center 0;}
-.icon_cont .ico_tit.ico_hpoint_eql			{ background: url(../../images/uiux/icon/logo_hpoint_eql.png) no-repeat 50% 0; background-size: 228px 32px; padding-top: 62px; }
-.icon_cont .ico_tit.ico_hpoint_eql_30			{ background: url(../../images/uiux/icon/logo_hpoint_eql_30.png) no-repeat 50% 0; background-size: 185px 30px; padding-top: 50px; }
-.icon_cont .ico_tit.ico_dormant			{background: url(../../images/uiux/icon/ico_dormant_40.png) no-repeat 50% 0; background-size:48px;  }
-.icon_cont .ico_tit.ico_password			{background: url(../../images/uiux/icon/ico_password_40.png) no-repeat 50% 0; background-size:48px;  }
+.icon_cont .ico_tit.ico_complate {background: url('../images/uiux/icon/ico_com_b_48.png') no-repeat center 0;}
+.icon_cont .ico_tit.ico_hpoint_eql			{ background: url(../images/uiux/icon/logo_hpoint_eql.png) no-repeat 50% 0; background-size: 228px 32px; padding-top: 62px; }
+.icon_cont .ico_tit.ico_hpoint_eql_30			{ background: url(../images/uiux/icon/logo_hpoint_eql_30.png) no-repeat 50% 0; background-size: 185px 30px; padding-top: 50px; }
+.icon_cont .ico_tit.ico_dormant			{background: url(../images/uiux/icon/ico_dormant_40.png) no-repeat 50% 0; background-size:48px;  }
+.icon_cont .ico_tit.ico_password			{background: url(../images/uiux/icon/ico_password_40.png) no-repeat 50% 0; background-size:48px;  }
 
 /* .icon_cont .ico_tit	.txt_m { margin-top: 15px; font-size: 14px; } */
-.icon_cont .ico_tit.ico_fail			{background: url(../../images/uiux/icon/ico_fail_48.png) no-repeat 50% 0;}
-/* .icon_cont .ico_tit.ico_gift			{background: url(../../images/uiux/icon/ico_gift_40.png) no-repeat 50% 0; background-size:40px;  } */
-/* .icon_cont .ico_tit.ico_complate		{background: url(../../images/uiux/icon/ico_com_b_40.png) no-repeat 50% 0; background-size:40px;  } */
-/* .icon_cont .ico_tit.ico_hpoint			{background: url(../../images/uiux/icon/ico_hpoint_40.png) no-repeat 50% 0; background-size:40px;  } */
+.icon_cont .ico_tit.ico_fail			{background: url(../images/uiux/icon/ico_fail_48.png) no-repeat 50% 0;}
+/* .icon_cont .ico_tit.ico_gift			{background: url(../images/uiux/icon/ico_gift_40.png) no-repeat 50% 0; background-size:40px;  } */
+/* .icon_cont .ico_tit.ico_complate		{background: url(../images/uiux/icon/ico_com_b_40.png) no-repeat 50% 0; background-size:40px;  } */
+/* .icon_cont .ico_tit.ico_hpoint			{background: url(../images/uiux/icon/ico_hpoint_40.png) no-repeat 50% 0; background-size:40px;  } */
 
 
 /* 말줄임 */
@@ -792,10 +792,10 @@ strong.tit_lv2 { font-weight: 700;}
 .share_txt strong {font-size: 16px; font-weight: 500;}
 .share_link {display: flex; gap: 20px;}
 .share_link a {clip: rect(0, 50px, 50px, 0); overflow: hidden; white-space: nowrap; width: 50px; height: 50px; display: inline-block; text-indent: -9999px;}
-.share_link a.share01 {background: url(../../images/uiux/icon/btn_kakao.png) no-repeat 0/ 50px 50px ;}
-.share_link a.share02 {background: url(../../images/uiux/icon/btn_fb.png) no-repeat 0/ 50px 50px ;}
-.share_link a.share03 {background: url(../../images/uiux/icon/btn_twitter.png) no-repeat 0/ 50px 50px ;}
-.share_link a.share04 {background: url(../../images/uiux/icon/btn_url.png) no-repeat 0/ 50px 50px ;}
+.share_link a.share01 {background: url(../images/uiux/icon/btn_kakao.png) no-repeat 0/ 50px 50px ;}
+.share_link a.share02 {background: url(../images/uiux/icon/btn_fb.png) no-repeat 0/ 50px 50px ;}
+.share_link a.share03 {background: url(../images/uiux/icon/btn_twitter.png) no-repeat 0/ 50px 50px ;}
+.share_link a.share04 {background: url(../images/uiux/icon/btn_url.png) no-repeat 0/ 50px 50px ;}
 
 /* 메인 배너 */
 .layer_popup {overflow: hidden; padding: 0;}
@@ -919,7 +919,7 @@ body.loading_open   {overflow: hidden;}
 
 /* 230908 UIUX | 상품 정렬순, 브랜드 필터 기능 추가 */
 .btn_filter_wrap .btn_filter {position:relative;display:inline-flex; align-items:center; padding:3px; font-weight:500; font-size:14px; color:#000; }
-.btn_filter_wrap .btn_filter::after {content:''; display:inline-block; width:15px; height:15px; margin-left:5px; background:url('../../images/uiux/icon/ico_filter_pr.png') no-repeat 0 0; }
+.btn_filter_wrap .btn_filter::after {content:''; display:inline-block; width:15px; height:15px; margin-left:5px; background:url('../images/uiux/icon/ico_filter_pr.png') no-repeat 0 0; }
 .btn_filter_wrap .btn_filter.is_active::before{content:''; position: absolute; right: 0; top: 3px; width: 3px; height: 3px; background: var(--bg-color-point); border-radius: 50%;}
 .new_brand_filter {width:640px; }
 .search_new_brand_filter .custom_select_wrap{margin-left:auto}
