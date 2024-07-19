@@ -14,7 +14,7 @@
 .wrap header.gnbShow { border-bottom:0}
 
 .wrap header .header_logo   {height: 100px; padding-top: 30px;}
-.wrap header .header_logo a { display: block; width: 115px; height: 45px; background: url(../../images/uiux/icon/gnb_logo.png) no-repeat; background-size:115px;}
+.wrap header .header_logo a { display: block; width: 115px; height: 45px; background: url(../images/uiux/icon/gnb_logo.png) no-repeat; background-size:115px;}
 
 .wrap header .gnb_close { position: absolute; top: 93px;  right: 50%;  background: url() no-repeat center center / 24px 24px; }
 .wrap header .gnb_content { display: none; width:100%; min-width:1280px; position: absolute; top: 100px; right: 0; left: 0; background: #fff; padding: 0px 30px 75px 30px;  box-shadow: 0 30px 60px -60px rgba(0, 0, 0, 0.1); }
@@ -39,7 +39,7 @@
 .wrap header .gnb_depth00_item { color: #b1b1b1; font-size: 12px; }
 .wrap header .gnb_depth00_item.on, .wrap header .gnb_depth00_item:hover { color: #000; }
 .wrap header .gnb_depth01_item { display: flex; width:100%; align-items: center; padding: 5px 0; font-weight: 700;}
-.wrap header .gnb_depth01_item::after { content: ''; display: block; width: 15px; height: 15px; background:url('../../images/uiux/icon/ico_arrow1_gnb.png') no-repeat; transform: rotate(270deg);}
+.wrap header .gnb_depth01_item::after { content: ''; display: block; width: 15px; height: 15px; background:url('../images/uiux/icon/ico_arrow1_gnb.png') no-repeat; transform: rotate(270deg);}
 .wrap header .gnb_depth02   {width:160px;}
 .wrap header .gnb_depth02, 
 .wrap header .gnb_depth01_item + .gnb_depth01_item { margin-top: 14px; }
@@ -64,12 +64,12 @@
 .wrap header nav .util li a .util_tooltip {opacity: 0; transition: opacity 0.2s ease;} 
 .wrap header nav .util li a:hover .util_tooltip {opacity: 1;} 
 .wrap header nav .util li a .util_tooltip {position:absolute; bottom:-35px; left:50%; transform: translate(-50%, 0); z-index:1; border:1px solid var(--line-color); padding:4px 10px 0; min-height:24px; font-size:12px; background-color: var(--bg-color-white);} 
-.wrap header nav .util li a .util_tooltip:before {content:''; position:absolute; top:-6px; left:50%; transform: translate(-50%, 0); z-index:3; display:block; width:10px; height:6px; margin:0 auto; background:url('../../images/uiux/icon/ico_util_hover.png');} 
-.wrap header nav .util li a.menu1 {background:url('../../images/uiux/icon/ico_search.png') no-repeat center /contain;} 
-.wrap header nav .util li a.menu2 {background:url('../../images/uiux/icon/ico_my.png') no-repeat center /contain;} 
-.wrap header nav .util li a.menu3 {background:url('../../images/uiux/icon/ico_logout.png') no-repeat center /contain;} 
-.wrap header nav .util li a.menu4 {background:url('../../images/uiux/icon/ico_equal.png') no-repeat center /contain;} 
-.wrap header nav .util li a.menu5 {background:url('../../images/uiux/icon/ico_cart.png') no-repeat center /contain;} 
+.wrap header nav .util li a .util_tooltip:before {content:''; position:absolute; top:-6px; left:50%; transform: translate(-50%, 0); z-index:3; display:block; width:10px; height:6px; margin:0 auto; background:url('../images/uiux/icon/ico_util_hover.png');} 
+.wrap header nav .util li a.menu1 {background:url('../images/uiux/icon/ico_search.png') no-repeat center /contain;} 
+.wrap header nav .util li a.menu2 {background:url('../images/uiux/icon/ico_my.png') no-repeat center /contain;} 
+.wrap header nav .util li a.menu3 {background:url('../images/uiux/icon/ico_logout.png') no-repeat center /contain;} 
+.wrap header nav .util li a.menu4 {background:url('../images/uiux/icon/ico_equal.png') no-repeat center /contain;} 
+.wrap header nav .util li a.menu5 {background:url('../images/uiux/icon/ico_cart.png') no-repeat center /contain;} 
 .wrap header nav .util li a.menu5 .count {position:absolute; top:-5px; left:50%; min-width:19px; padding:0 7px; height:18px; font-family: 'GT-America'; line-height:19px; font-size:9px; white-space: nowrap; color:var(--txt-color-white); text-align:center; border-radius:18px; background-color:rgba(255, 0, 0, 0.9);  } 
 
 
@@ -82,7 +82,7 @@
  .total_search_wrap.is_open { display: flex; top: 0; transition: top 0.3s ease;  height:611px; } 
  .total_search_wrap.type1 {display: flex; top: 0; justify-content: center; transition: top 0.3s ease; position:unset;} 
  .total_search_wrap .search_wrap { position: relative; width: 840px; margin-top: 60px; margin-right: 60px; }
- .total_search_wrap .btn_close { position: absolute; right: 0px; top: 0px; width: 40px; height: 40px; background: url('../../images/uiux/icon/icon_close_w_24.png') var(--bg-color-black) no-repeat center /24px 24px;}
+ .total_search_wrap .btn_close { position: absolute; right: 0px; top: 0px; width: 40px; height: 40px; background: url('../images/uiux/icon/icon_close_w_24.png') var(--bg-color-black) no-repeat center /24px 24px;}
  
  .auto_keyword_box { display: none; position: absolute; left: 0px; top: 62px; width: 100%;  height: calc(100% - 122px); padding-top: 30px; background: var(--bg-color-white); overflow: auto;}
  .top_search .auto_keyword_box { position:absolute; width:840px; left: 50%; transform: translateX(-50%); overflow: hidden; height: auto; height:430px; background:#fff; z-index:101; border:1px solid #000000; border-top:0; margin:0; margin-top:2px; padding:5px;   }
@@ -127,7 +127,7 @@
  .total_search_wrap  .input_clear input:focus:invalid ~ .search_btn { pointer-events: none; }
  .total_search_wrap  .input_clear .search_btn {min-width: 40px;height: 40px;position: static; z-index: 1; margin-top: 4px;}
  .total_search_wrap  .input_clear .search_btn span {height: 100%;display: flex;align-items: center;position: absolute;top: 0;left: 0;padding: 0 0 10px 0; font-size: 26px; color: var(--txt-color-gray02);white-space: nowrap;}
- .total_search_wrap .input_clear .clear_btn:before { width: 32px; height: 32px; background: url('../../images/uiux/icon/icon_close_32.png') var(--bg-color-white) no-repeat 50% 50%/ contain}
+ .total_search_wrap .input_clear .clear_btn:before { width: 32px; height: 32px; background: url('../images/uiux/icon/icon_close_32.png') var(--bg-color-white) no-repeat 50% 50%/ contain}
  .total_search_wrap  .input_clear input:focus-within~.search_btn span {display: none;}
  .total_search_wrap  .input_clear input:valid~.search_btn {display: none;}
  
@@ -182,8 +182,8 @@ header .gnb_banner .info_area .cont_tit { font-size: 16px; word-break: break-wor
 .wrap footer .company {display:flex; justify-content: space-between; flex-direction: column;  width:25%; min-height: inherit; padding:40px 0 40px 30px;} 
 .wrap footer .company .family_site_wrap {position:relative;}
 .wrap footer .company .family_site_wrap .family_tit {font-size: 14px; font-weight: 500; cursor: pointer; display:flex; justify-content: flex-start; align-items: center;}
-.wrap footer .company .family_site_wrap .family_tit:after {content:''; display: inline-block; width: 18px; height: 18px; background: url('../../images/uiux/icon/ico_plus_s.png') no-repeat center center; /*transition: .2s;*/ vertical-align: middle; background-size:18px 18px; margin-left:5px}
-.wrap footer .company .family_site_wrap .family_tit.on:after { background:url("../../images/uiux/icon/ico_minus_s.png") no-repeat center center; background-size:18px 18px;}
+.wrap footer .company .family_site_wrap .family_tit:after {content:''; display: inline-block; width: 18px; height: 18px; background: url('../images/uiux/icon/ico_plus_s.png') no-repeat center center; /*transition: .2s;*/ vertical-align: middle; background-size:18px 18px; margin-left:5px}
+.wrap footer .company .family_site_wrap .family_tit.on:after { background:url("../images/uiux/icon/ico_minus_s.png") no-repeat center center; background-size:18px 18px;}
 .wrap footer .company .family_site_wrap .familysite_depth { display: none; position:absolute; bottom:35px; left:-290px; width:390px; height:524px; overflow-y:auto; background-color:var(--bg-color-white); border:1px solid var(--btn-line-black); justify-content: flex-start; align-items: flex-start; padding:30px; }
 .wrap footer .company .family_site_wrap .familysite_depth.is_active { display:flex}
 .wrap footer .company .family_site_wrap .familysite_depth dl { width:calc((100% - 30px) / 2); display:inline-flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; }
