@@ -799,7 +799,18 @@
    </ul>
    <ul>
       <li style="margin: 1rem;">
-         목차
+        <table style="font-size: 1rem; border-collapse: collapse;margin-left:auto;margin-right:auto;" cellpadding="1">
+          <tr>
+            <td style="width:50%;padding:2rem;font-size:1.3rem;">
+              목차
+            </td>
+            <td style="width:50%;text-align:right;padding:2rem;">
+              <input type="button" class="privacyAllView" value="전체보기" style="width:30%;height:30px;border: 1px solid #a2a2a2;" onclick="$('.privacyDetailView').show();$('.privacyAllView').hide();$('.privacyAllClose').show();$('.toggle-icon').attr({ src: './images/uiux/icon/up-arrow.png'});">
+              <input type="button" class="privacyAllClose" value="전체닫기" style="display:none;width:30%;height:30px;border: 1px solid #a2a2a2;" onclick="$('.privacyDetailView').hide();$('.privacyAllView').show();$('.privacyAllClose').hide();$('.toggle-icon').attr({ src: './images/uiux/icon/down-arrow.png'});">
+            </td>
+          </tr>
+        </table>
+        
          <table style="font-size: 1rem; border-collapse: collapse;margin-left:auto;margin-right:auto;" cellpadding="1">
             <colgroup>
                <col style="width: 60%; border-collapse: collapse" />
@@ -808,13 +819,13 @@
             </colgroup>
             <thead>
               <tr style="cursor:pointer;" onclick="toggleNextRow(this)">
-                <td style="vertical-align: top">1. 개인정보의 처리목적, 수집 항목, 보유 및 이용기간</td>
+                <td style="vertical-align: top" onmouseover="this.style='color:blue;font-weight:600;vertical-align: top;'" onmouseout="this.style='color:#000000;font-weight:500;vertical-align: top;'">1. 개인정보의 처리목적, 수집 항목, 보유 및 이용기간</td>
                 <td>
                   <img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoType/personalInfo.png" class="infoimage"><img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoProcess/period.png" class="infoimage"><img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoProcess/purpose.png" class="infoimage">
                 </td>
                 <td style="text-align: center;"><img class="toggle-icon" src="./images/uiux/icon/down-arrow.png" style="width:14%;"></td>
               </tr>
-              <tr style="display:none;">
+              <tr class="privacyDetailView" style="display:none;">
                 <td colspan="3" style="padding:1rem 5rem 1rem 1rem;">
                   <ul style="font-weight: 300; font-size: 1rem">
                     <li style="margin: -1rem 0rem 0rem 1rem">“이큐엘스토어닷컴”은 별도의 회원가입 절차 없이 대부분의 컨텐츠에 자유롭게 접근할 수 있습니다. “이큐엘스토어닷컴”의 서비스를 이용하시는 경우(예, 회원가입, 상품구매 등) 다음의 정보를 수집할 수 있으며 선택항목을 입력하지 않으셔도 해당 항목을 활용한 서비스를 제외한 다른 서비스 이용에는 제한이 없습니다.</li>
@@ -1472,11 +1483,11 @@
                 </td>
               </tr>
               <tr style="cursor:pointer;" onclick="toggleNextRow(this)">
-                <td style="vertical-align: top">2. 장기간 미사용 고객의 개인정보 파기</td>
+                <td style="vertical-align: top" onmouseover="this.style='color:blue;font-weight:600;vertical-align: top;'" onmouseout="this.style='color:#000000;font-weight:500;vertical-align: top;'">2. 장기간 미사용 고객의 개인정보 파기</td>
                 <td><img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoProcess/destruction.png" class="infoimage"></td>
                 <td style="text-align: center;"><img class="toggle-icon" src="./images/uiux/icon/down-arrow.png" style="width:14%;"></td>
               </tr>
-              <tr style="display:none;">
+              <tr class="privacyDetailView" style="display:none;">
                   <td colspan="3"  style="padding:1rem 5rem 1rem 1rem;">
                     <ul style="font-weight: 300; font-size: 1rem">
                       <li style="margin: 0rem 5rem 0rem 1rem; padding-left: 1rem; text-indent: -1.2rem">① “이큐엘스토어닷컴”은 “이큐엘스토어닷컴” 회원 및 비회원 고객이 5년간 온라인몰 및 오프라인 매장에서 어떠한 이용 내역도 없어 자동 탈퇴되거나, 개인정보 수집에 대한 동의 철회 요청이 있는 경우에 해당 회원의 개인정보를 지체없이 파기하고 있습니다. 다만, 관련법령에 따라 개인정보를 계속 보존하여야 하는 경우에는 해당 법령에서 요구되는 기간 동안 보관 후 경과 시 파기합니다.</li>
@@ -1486,11 +1497,11 @@
                 </td>
               </tr>
               <tr style="cursor:pointer;" onclick="toggleNextRow(this)">
-                <td style="vertical-align: top">3. 14세 미만 아동의 개인정보 처리에 관한 사항</td>
+                <td style="vertical-align: top" onmouseover="this.style='color:blue;font-weight:600;vertical-align: top;'" onmouseout="this.style='color:#000000;font-weight:500;vertical-align: top;'">3. 14세 미만 아동의 개인정보 처리에 관한 사항</td>
                 <td><img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoLegal/representative.png" class="infoimage"></td>
                 <td style="text-align: center;"><img class="toggle-icon" src="./images/uiux/icon/down-arrow.png" style="width:14%;"></td>
               </tr>
-              <tr style="display:none;">
+              <tr class="privacyDetailView" style="display:none;">
                 <td colspan="3"  style="padding:1rem 5rem 1rem 1rem;">
                   <ul style="font-weight: 300; font-size: 1rem">
                     <li style="margin: 0rem 0rem 0rem 1rem; padding-left: 1rem; text-indent: -1.2rem">“이큐엘스토어닷컴”는 법정대리인의 동의가 필요한 만 14세 미만 아동의 회원가입과 개인정보를 수집하지 않습니다.</li>
@@ -1498,11 +1509,11 @@
                 </td>
               </tr>
               <tr style="cursor:pointer;" onclick="toggleNextRow(this)">
-                <td style="vertical-align: top">4. 개인정보의 파기 절차 및 방법</td>
+                <td style="vertical-align: top" onmouseover="this.style='color:blue;font-weight:600;vertical-align: top;'" onmouseout="this.style='color:#000000;font-weight:500;vertical-align: top;'">4. 개인정보의 파기 절차 및 방법</td>
                 <td><img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoProcess/destruction.png" class="infoimage"></td>
                 <td style="text-align: center;"><img class="toggle-icon" src="./images/uiux/icon/down-arrow.png" style="width:14%;"></td>
               </tr>
-              <tr style="display:none;">
+              <tr class="privacyDetailView" style="display:none;">
                 <td colspan="3"  style="padding:1rem 5rem 1rem 1rem;">
                   <ul style="font-weight: 300; font-size: 1rem">
                     <li style="margin: 0rem 0rem 0rem 1rem; padding-left: 1rem; text-indent: -1.2rem">① “이큐엘스토어닷컴”은 개인정보 보유기간의 경과, 처리목적 달성 등 개인정보가 불필요하게 되었을 때에는 지체없이 해당 개인정보를 파기(삭제)합니다.</li>
@@ -1518,11 +1529,11 @@
                 </td>
               </tr>
               <tr style="cursor:pointer;" onclick="toggleNextRow(this)">
-                <td style="vertical-align: top">5. 개인정보의 제3자 제공</td>
+                <td style="vertical-align: top" onmouseover="this.style='color:blue;font-weight:600;vertical-align: top;'" onmouseout="this.style='color:#000000;font-weight:500;vertical-align: top;'">5. 개인정보의 제3자 제공</td>
                 <td><img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoProcess/thirdParty.png" class="infoimage"></td>
                 <td style="text-align: center;"><img class="toggle-icon" src="./images/uiux/icon/down-arrow.png" style="width:14%;"></td>
               </tr>
-              <tr style="display:none;">
+              <tr class="privacyDetailView" style="display:none;">
                 <td colspan="3"  style="padding:1rem 5rem 1rem 1rem;">
 
                   <ul style="font-weight: 300; font-size: 1rem">
@@ -1606,11 +1617,11 @@
                 </td>
               </tr>
               <tr style="cursor:pointer;" onclick="toggleNextRow(this)">
-                <td style="vertical-align: top">6. 개인정보의 처리의 위탁</td>
+                <td style="vertical-align: top" onmouseover="this.style='color:blue;font-weight:600;vertical-align: top;'" onmouseout="this.style='color:#000000;font-weight:500;vertical-align: top;'">6. 개인정보의 처리의 위탁</td>
                 <td><img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoProcess/Consignment.png" class="infoimage"></td>
                 <td style="text-align: center;"><img class="toggle-icon" src="./images/uiux/icon/down-arrow.png" style="width:14%;"></td>
               </tr>
-              <tr style="display:none;">
+              <tr class="privacyDetailView" style="display:none;">
                 <td colspan="3"  style="padding:1rem 5rem 1rem 1rem;">
                     <ul style="font-weight: 300; font-size: 1rem">
                       <li style="margin: 0rem 0rem 0rem 1rem;padding-left: 1rem; text-indent: -1.5rem">① “이큐엘스토어닷컴”은 고객의 서비스 이용을 위하여 다음과 같이 개인정보 처리업무를 위탁하고 있습니다.</li>
@@ -1763,11 +1774,11 @@
                 </td>
               </tr>
               <tr style="cursor:pointer;" onclick="toggleNextRow(this)">
-                <td style="vertical-align: top">7. 고객의 동의없이 추가적인 이용・제공을 위한 판단기준</td>
+                <td style="vertical-align: top" onmouseover="this.style='color:blue;font-weight:600;vertical-align: top;'" onmouseout="this.style='color:#000000;font-weight:500;vertical-align: top;'">7. 고객의 동의없이 추가적인 이용・제공을 위한 판단기준</td>
                 <td><img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoProcess/additional.png" class="infoimage"></td>
                 <td style="text-align: center;"><img class="toggle-icon" src="./images/uiux/icon/down-arrow.png" style="width:14%;"></td>
               </tr>
-              <tr style="display:none;">
+              <tr class="privacyDetailView" style="display:none;">
                 <td colspan="3"  style="padding:1rem 5rem 1rem 1rem;">
                   <ul style="font-weight: 300; font-size: 1rem">
                     <li style="margin: 0rem 0rem 0rem 1rem;">“이큐엘스토어닷컴”은 고객이 동의한 범위 내에서만 개인정보를 이용 및 제공합니다.  「개인정보 보호법」 제15조제3항 또는 제17조제4항에 따라 고객의 동의없이 개인정보를 추가적으로 이용 또는 제공하는 경우는 아래의 판단기준에 따라 결정하도록 하겠습니다. </li>
@@ -1779,11 +1790,11 @@
                 </td>
               </tr>
               <tr style="cursor:pointer;" onclick="toggleNextRow(this)">
-                <td style="vertical-align: top">8. 개인정보의 안전성 확보조치</td>
+                <td style="vertical-align: top" onmouseover="this.style='color:blue;font-weight:600;vertical-align: top;'" onmouseout="this.style='color:#000000;font-weight:500;vertical-align: top;'">8. 개인정보의 안전성 확보조치</td>
                 <td><img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoLegal/stability.png" class="infoimage"></td>
                 <td style="text-align: center;"><img class="toggle-icon" src="./images/uiux/icon/down-arrow.png" style="width:14%;"></td>
               </tr>
-              <tr style="display:none;">
+              <tr class="privacyDetailView" style="display:none;">
                 <td colspan="3"  style="padding:1rem 5rem 1rem 1rem;">
                   <ul style="font-weight: 300; font-size: 1rem">
                     <li style="margin: 0rem 0rem 0rem 1rem;">“이큐엘스토어닷컴”은 고객 개인정보의 안전성 확보를 위해 다음과 같은 보호조치를 취하고 있습니다.</li>
@@ -1794,11 +1805,11 @@
                 </td>
               </tr>
               <tr style="cursor:pointer;" onclick="toggleNextRow(this)">
-                <td style="vertical-align: top">9. 민감정보의 공개 가능성 및 비공개를 선택하는 방법</td>
+                <td style="vertical-align: top" onmouseover="this.style='color:blue;font-weight:600;vertical-align: top;'" onmouseout="this.style='color:#000000;font-weight:500;vertical-align: top;'">9. 민감정보의 공개 가능성 및 비공개를 선택하는 방법</td>
                 <td><img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoType/sensitiveInfo.png" class="infoimage"></td>
                 <td style="text-align: center;"><img class="toggle-icon" src="./images/uiux/icon/down-arrow.png" style="width:14%;"></td>
               </tr>
-              <tr style="display:none;">
+              <tr class="privacyDetailView" style="display:none;">
                 <td colspan="3"  style="padding:1rem 5rem 1rem 1rem;">
                   <ul style="font-weight: 300; font-size: 1rem">
                     <li style="margin: 0rem 0rem 0rem 1rem; padding-left: 1rem; text-indent: -1.5rem">① ‘민감정보’란 개인의 사상ㆍ신념, 노동조합ㆍ정당의 가입ㆍ탈퇴, 정치적 견해, 건강, 성생활 등에 관한 정보, 그 밖에 정보주체의 사생활을 현저히 침해할 우려가 있는 개인정보를 말합니다. </li>
@@ -1808,11 +1819,11 @@
                 </td>
               </tr>
               <tr style="cursor:pointer;" onclick="toggleNextRow(this)">
-                <td style="vertical-align: top">10. 개인정보 자동 수집 장치의 설치·운영 및 거부에 관한 사항</td>
+                <td style="vertical-align: top" onmouseover="this.style='color:blue;font-weight:600;vertical-align: top;'" onmouseout="this.style='color:#000000;font-weight:500;vertical-align: top;'">10. 개인정보 자동 수집 장치의 설치·운영 및 거부에 관한 사항</td>
                 <td><img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoProcess/ai.png" class="infoimage"></td>
                 <td style="text-align: center;"><img class="toggle-icon" src="./images/uiux/icon/down-arrow.png" style="width:14%;"></td>
               </tr>
-              <tr style="display:none;">
+              <tr class="privacyDetailView" style="display:none;">
                 <td colspan="3"  style="padding:1rem 5rem 1rem 1rem;">
                   <ul style="font-weight: 300; font-size: 1rem">
                     <li style="margin: 0rem 0rem 0rem 1rem; padding-left: 1rem; text-indent: -1.5rem">① “이큐엘스토어닷컴”은 고객에게 개별적인 맞춤서비스를 제공하기 위해 이용정보를 저장하고 수시로 불러오는 ‘쿠키(cookie)’를 사용합니다. </li>
@@ -1900,11 +1911,11 @@
                 </td>
               </tr>
               <tr style="cursor:pointer;" onclick="toggleNextRow(this)">
-                <td style="vertical-align: top">11. 행태정보의 수집・이용・제공 및 거부 등에 관한 사항</td>
+                <td style="vertical-align: top" onmouseover="this.style='color:blue;font-weight:600;vertical-align: top;'" onmouseout="this.style='color:#000000;font-weight:500;vertical-align: top;'">11. 행태정보의 수집・이용・제공 및 거부 등에 관한 사항</td>
                 <td><img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoProcess/shapeInfo.png" class="infoimage"></td>
                 <td style="text-align: center;"><img class="toggle-icon" src="./images/uiux/icon/down-arrow.png" style="width:14%;"></td>
               </tr>
-              <tr style="display:none;">
+              <tr class="privacyDetailView" style="display:none;">
                 <td colspan="3"  style="padding:1rem 5rem 1rem 1rem;">
                   <ul style="font-weight: 300; font-size: 1rem">
                     <li style="margin: 0rem 0rem 0rem 1rem; padding-left: 1rem; text-indent: -1.5rem">① 행태정보란, 웹 사이트 방문 이력, 앱 사용 이력, 구매 및 검색 이력 등 이용자의 관심, 흥미, 기호 및 성향 등을 파악하고 분석할 수 있는 온라인상의 이용자 활동정보를 말합니다.</li>
@@ -2033,11 +2044,11 @@
                 </td>
               </tr>
               <tr style="cursor:pointer;" onclick="toggleNextRow(this)">
-                <td style="vertical-align: top">12. 정보주체와 법정대리인의 권리·의무 및 행사방법</td>
+                <td style="vertical-align: top" onmouseover="this.style='color:blue;font-weight:600;vertical-align: top;'" onmouseout="this.style='color:#000000;font-weight:500;vertical-align: top;'">12. 정보주체와 법정대리인의 권리·의무 및 행사방법</td>
                 <td><img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoLegal/duty.png" class="infoimage"></td>
                 <td style="text-align: center;"><img class="toggle-icon" src="./images/uiux/icon/down-arrow.png" style="width:14%;"></td>
               </tr>
-              <tr style="display:none;">
+              <tr class="privacyDetailView" style="display:none;">
                 <td colspan="3"  style="padding:1rem 5rem 1rem 1rem;">
                   <ul style="font-weight: 300; font-size: 1rem">
                     <li style="margin: 0rem 0rem 0rem 1rem; padding-left: 1rem; text-indent: -1.5rem">① 고객은 "이큐엘스토어닷컴"에서 처리하는 자신의 개인정보에 대하여 「개인정보보호법」 제4조(정보주체의 권리)에서 정한 권리(아래 표 참조)를 갖고 있으며, 이에 대한 권리를 행사(이하 "권리행사"라 함)할 수 있습니다.
@@ -2070,11 +2081,11 @@
                 </td>
               </tr>
               <tr style="cursor:pointer;" onclick="toggleNextRow(this)">
-                <td style="vertical-align: top">13. 개인정보 보호책임자 및 개인정보 열람청구</td>
+                <td style="vertical-align: top" onmouseover="this.style='color:blue;font-weight:600;vertical-align: top;'" onmouseout="this.style='color:#000000;font-weight:500;vertical-align: top;'">13. 개인정보 보호책임자 및 개인정보 열람청구</td>
                 <td><img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoLegal/cpo.png" class="infoimage"><img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoLegal/request.png" class="infoimage"></td>
                 <td style="text-align: center;"><img class="toggle-icon" src="./images/uiux/icon/down-arrow.png" style="width:14%;"></td>
               </tr>
-              <tr style="display:none;">
+              <tr class="privacyDetailView" style="display:none;">
                 <td colspan="3"  style="padding:1rem 5rem 1rem 1rem;">
                   <ul style="font-weight: 300; font-size: 1rem">
                     <li style="margin: 0rem 0rem 0rem 1rem; padding-left: 1rem; text-indent: -1.5rem">① “이큐엘스토어닷컴”은 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 고객의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.</li>
@@ -2163,11 +2174,11 @@
                 </td>
               </tr>
               <tr style="cursor:pointer;" onclick="toggleNextRow(this)">
-                <td style="vertical-align: top">14. 고객의 개인정보 권익침해에 대한 구제방법 </td>
+                <td style="vertical-align: top" onmouseover="this.style='color:blue;font-weight:600;vertical-align: top;'" onmouseout="this.style='color:#000000;font-weight:500;vertical-align: top;'">14. 고객의 개인정보 권익침해에 대한 구제방법 </td>
                 <td><img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoLegal/Remedy.png" class="infoimage"></td>
                 <td style="text-align: center;"><img class="toggle-icon" src="./images/uiux/icon/down-arrow.png" style="width:14%;"></td>
               </tr>              
-              <tr style="display:none;">
+              <tr class="privacyDetailView" style="display:none;">
                 <td colspan="3"  style="padding:1rem 5rem 1rem 1rem;">
                   <ul style="font-weight: 300; font-size: 1rem">
                     <li style="margin: 0rem 0rem 0rem 1rem; padding-left: 1rem; text-indent: -1.5rem">① “이큐엘스토어닷컴”은 고객의 개인정보 자기결정권을 보장하고, 개인정보침해로 인한 상담 및 피해 구제를 위해 노력하고 있으며, 신고나 상담이 필요한 경우 아래의 담당부서로 연락해 주시기 바랍니다.</li>
@@ -2244,11 +2255,11 @@
                 </td>
               </tr>
               <tr style="cursor:pointer;" onclick="toggleNextRow(this)">
-                <td style="vertical-align: top">15. 광고성 정보전송</td>
+                <td style="vertical-align: top" onmouseover="this.style='color:blue;font-weight:600;vertical-align: top;'" onmouseout="this.style='color:#000000;font-weight:500;vertical-align: top;'">15. 광고성 정보전송</td>
                 <td><img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoProcess/additional.png" class="infoimage"></td>
                 <td style="text-align: center;"><img class="toggle-icon" src="./images/uiux/icon/down-arrow.png" style="width:14%;"></td>
               </tr>       
-              <tr style="display:none;">
+              <tr class="privacyDetailView" style="display:none;">
                 <td colspan="3"  style="padding:1rem 5rem 1rem 1rem;">
                   <ul style="font-weight: 300; font-size: 1rem">
                     <li style="margin: 0rem 0rem 0rem 1rem; padding-left: 1rem; text-indent: -1.5rem">① “이큐엘스토어닷컴”은 고객의 명시적인 수신거부의사에 반하여 영리목적의 광고성 정보를 전송하지 않습니다.</li>
@@ -2268,11 +2279,11 @@
                 </td>
               </tr>
               <tr style="cursor:pointer;" onclick="toggleNextRow(this)">
-                <td style="vertical-align: top">16. 개인정보 처리방침의 변경에 관한 사항</td>
+                <td style="vertical-align: top" onmouseover="this.style='color:blue;font-weight:600;vertical-align: top;'" onmouseout="this.style='color:#000000;font-weight:500;vertical-align: top;'">16. 개인정보 처리방침의 변경에 관한 사항</td>
                 <td><img src="https://ep.eqlstore.com/eql_pc/resources/policy/infoLegal/policyChange.png" class="infoimage"></td>
                 <td style="text-align: center;"><img class="toggle-icon" src="./images/uiux/icon/down-arrow.png" style="width:14%;"></td>
               </tr>                        
-              <tr style="display:none;">
+              <tr class="privacyDetailView" style="display:none;">
                 <td colspan="3"  style="padding:1rem 5rem 1rem 1rem;">
                   <ul style="font-weight: 300; font-size: 1rem">
                     <li style="margin: 0rem 0rem 0rem 1rem; padding-left: 1rem; text-indent: -1.5rem">① 이 개인정보 처리방침은 2024년 X월 XX일부터 적용됩니다.</li>
@@ -2721,20 +2732,20 @@
                <col style="width: 50%; border-collapse: collapse" />
             </colgroup>
             <thead>
-               <tr>
-                  <td style="vertical-align: top">
-                     <ul>
-                        <li style="margin: 0rem 0rem 0rem 1.5rem; padding-left: 1rem; text-indent: -1.5rem"><a href="#handsometitle01" style="text-decoration: none" target="_self">1. 개인정보의 처리목적, 수집 항목, 보유 및 이용기간 </a></li>
-                        <li style="margin: 0rem 0rem 0rem 1.5rem; padding-left: 1rem; text-indent: -1.5rem"><a href="#handsometitle02" style="text-decoration: none" target="_self">2. 만14세 미만 아동의 개인정보 처리에 관한 사항 </a></li>
-                        <li style="margin: 0rem 0rem 0rem 1.5rem; padding-left: 1rem; text-indent: -1.5rem"><a href="#handsometitle03" style="text-decoration: none" target="_self">3. 개인정보의 제3자 제공</a></li>
-                        <li style="margin: 0rem 0rem 0rem 1.5rem; padding-left: 1rem; text-indent: -1.5rem"><a href="#handsometitle04" style="text-decoration: none" target="_self">4. 개인정보 처리의 위탁</a></li>
-                        <li style="margin: 0rem 0rem 0rem 1.5rem; padding-left: 1rem; text-indent: -1.5rem"><a href="#handsometitle05" style="text-decoration: none" target="_self">5. 개인정보의 파기 절차 및 방법</a></li>
-                        <li style="margin: 0rem 0rem 0rem 1.5rem; padding-left: 1rem; text-indent: -1.5rem"><a href="#handsometitle06" style="text-decoration: none" target="_self">6. 미이용자의 개인정보 파기 등에 관한 조치</a></li>
-                        <li style="margin: 0rem 0rem 0rem 1.5rem; padding-left: 1rem; text-indent: -1.5rem"><a href="#handsometitle07" style="text-decoration: none" target="_self">7. 정보주체와 법정대리인의 권리·의무 및 행사방법</a></li>
-                        <li style="margin: 0rem 0rem 0rem 1.5rem; padding-left: 1rem; text-indent: -1.5rem"><a href="#handsometitle08" style="text-decoration: none" target="_self">8. 개인정보의 안전성 확보조치</a></li>
-                     </ul>
-                  </td>
-                  <td style="vertical-align: top">
+              <tr>
+                <td style="vertical-align: top">
+                   <ul>
+                      <li style="margin: 0rem 0rem 0rem 1.5rem; padding-left: 1rem; text-indent: -1.5rem"><a href="#handsometitle01" style="text-decoration: none" target="_self">1. 개인정보의 처리목적, 수집 항목, 보유 및 이용기간 </a></li>
+                      <li style="margin: 0rem 0rem 0rem 1.5rem; padding-left: 1rem; text-indent: -1.5rem"><a href="#handsometitle02" style="text-decoration: none" target="_self">2. 만14세 미만 아동의 개인정보 처리에 관한 사항 </a></li>
+                      <li style="margin: 0rem 0rem 0rem 1.5rem; padding-left: 1rem; text-indent: -1.5rem"><a href="#handsometitle03" style="text-decoration: none" target="_self">3. 개인정보의 제3자 제공</a></li>
+                      <li style="margin: 0rem 0rem 0rem 1.5rem; padding-left: 1rem; text-indent: -1.5rem"><a href="#handsometitle04" style="text-decoration: none" target="_self">4. 개인정보 처리의 위탁</a></li>
+                      <li style="margin: 0rem 0rem 0rem 1.5rem; padding-left: 1rem; text-indent: -1.5rem"><a href="#handsometitle05" style="text-decoration: none" target="_self">5. 개인정보의 파기 절차 및 방법</a></li>
+                      <li style="margin: 0rem 0rem 0rem 1.5rem; padding-left: 1rem; text-indent: -1.5rem"><a href="#handsometitle06" style="text-decoration: none" target="_self">6. 미이용자의 개인정보 파기 등에 관한 조치</a></li>
+                      <li style="margin: 0rem 0rem 0rem 1.5rem; padding-left: 1rem; text-indent: -1.5rem"><a href="#handsometitle07" style="text-decoration: none" target="_self">7. 정보주체와 법정대리인의 권리·의무 및 행사방법</a></li>
+                      <li style="margin: 0rem 0rem 0rem 1.5rem; padding-left: 1rem; text-indent: -1.5rem"><a href="#handsometitle08" style="text-decoration: none" target="_self">8. 개인정보의 안전성 확보조치</a></li>
+                   </ul>
+                </td>
+                <td style="vertical-align: top">
                      <ul>
                         <li style="margin: 0rem 0rem 0rem 1.5rem; padding-left: 1rem; text-indent: -1.5rem"><a href="#handsometitle09" style="text-decoration: none" target="_self">9. 개인정보 자동 수집 장치의 설치·운영 및 거부에 관한 사항</a></li>
                         <li style="margin: 0rem 0rem 0rem 1.5rem; padding-left: 1rem; text-indent: -1.5rem"><a href="#handsometitle10" style="text-decoration: none" target="_self">10. 행태정보의 수집·이용 및 거부등에 관한 사항</a></li>
