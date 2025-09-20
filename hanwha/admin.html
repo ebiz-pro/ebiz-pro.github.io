@@ -1,105 +1,602 @@
-<div id="dashboard-page" class="page-content active">
-    <div class="page-header">
-        <h2>대시보드</h2>
-        <p class="description">시스템의 주요 현황을 요약하여 보여줍니다.</p>
-    </div>
-    <div class="dashboard-grid">
-        <!-- 1번째 행 -->
-        <div class="card">
-            <h3>관리자 및 권한 현황</h3>
-            <ul>
-                <li><b>내 권한 목록</b>
-                    <ul style="margin-left:20px; margin-top:5px;">
-                        <li>회사 관리자 : 한화시스템/ICT</li>
-                        <li>부서 관리자 : 플랫폼개발팀, 데이터분석팀</li>
-                    </ul>
-                </li>
-                <li style="margin-top:10px;"><b>한화시스템/ICT 총 사용자 :</b> 384 명</li>
-                <li><b>플랫폼개발팀 총 사용자 :</b> 14 명</li>
-                <li><b>데이터분석팀 총 사용자 :</b> 8 명</li>
-            </ul>
-        </div>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DWP 관리 시스템 IA 데모 (최종 통합)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { height: 100%; font-family: 'Malgun Gothic', sans-serif; background-color: #f4f6f9; color: #333; font-size: 14px; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        button { cursor: pointer; padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px; background-color: #007bff; color: white; }
+        button:hover { background-color: #0056b3; }
+        button.btn-danger { background-color: #dc3545; }
+        button.btn-danger:hover { background-color: #c82333; }
+        button.btn-secondary { background-color: #6c757d; }
+        button.btn-secondary:hover { background-color: #5a6268; }
+        button.btn-sm { padding: 5px 10px; font-size: 12px; }
+        input, select { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background-color: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; vertical-align: middle; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
 
-        <div class="card">
-            <h3>AI 에이전트 현황</h3>
-            <ul class="kpi-list">
-                <li><strong>총 에이전트:</strong> <span class="value">120</span> 개</li>
-                <li><strong>활성 에이전트:</strong> <span class="value">85</span> 개</li>
-                <li><strong>24시간 내 호출:</strong> <span class="value">1,234</span> 회</li>
-            </ul>
-            <hr style="margin: 15px 0;">
-            <div class="agent-list-container">
-                <div class="agent-list">
-                    <h4>Top 5 인기 에이전트</h4>
+        .container { display: flex; height: 100vh; }
+        .lnb { width: 260px; background-color: #343a40; color: #c2c7d0; overflow-y: auto; flex-shrink: 0; }
+        .content { flex-grow: 1; padding: 30px; overflow-y: auto; }
+
+        .lnb-header { padding: 20px; text-align: center; background-color: #2a2f34; }
+        .lnb-header h1 { font-size: 20px; color: #fff; }
+        .menu-category { padding: 15px 20px 5px; font-size: 12px; text-transform: uppercase; color: #888; font-weight: bold; }
+        .lnb-menu > li > a { display: block; padding: 12px 20px; font-size: 15px; transition: background-color 0.2s; }
+        .lnb-menu > li > a:hover { background-color: #495057; color: #fff; }
+        .lnb-menu > li.active > a { background-color: #007bff; color: #fff; }
+        .lnb-menu .submenu { display: none; background-color: #40464d; }
+        .lnb-menu .submenu li a { display: block; padding: 10px 20px 10px 35px; font-size: 14px; }
+        .lnb-menu > li.has-submenu.active .submenu { display: block; }
+        
+        .has-submenu > a::after { content: '▶'; float: right; font-size: 10px; transform: rotate(0deg); transition: transform 0.2s; }
+        .has-submenu.active > a::after { transform: rotate(90deg); }
+
+        .page-content { display: none; }
+        .page-content.active { display: block; }
+        .page-header { margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .page-header h2 { font-size: 24px; }
+        .page-header p.description { color: #666; margin-top: 5px; }
+
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background-color: #fff; border-radius: 5px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .card h3 { margin-bottom: 15px; font-size: 18px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .card ul li { margin-bottom: 8px; }
+        .card .value { font-weight: bold; font-size: 24px; color: #007bff; }
+        .toolbar { margin-bottom: 20px; display: flex; gap: 10px; align-items: center; padding: 15px; background-color:#fff; border-radius: 5px; }
+        
+        .form-section { background-color: #fff; padding: 20px; border-radius: 5px; margin-top: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; }
+        textarea { height: 150px; resize: vertical; }
+
+        .page-notes { margin-top: 25px; padding: 15px; background-color: #e9ecef; border-left: 4px solid #007bff; border-radius: 4px; }
+        .page-notes h4 { margin-bottom: 10px; }
+        
+        /* 모달 스타일 */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 1000; }
+        .modal-overlay.show { display: flex; }
+        .modal-content { background: white; padding: 30px; border-radius: 8px; width: 90%; max-width: 800px; position: relative; }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #dee2e6; padding-bottom: 10px;}
+        .modal-header h3 { margin: 0; font-size: 20px; }
+        .modal-close { font-size: 24px; font-weight: bold; cursor: pointer; border: none; background: transparent; }
+        .modal-footer { text-align: right; margin-top: 20px; border-top: 1px solid #dee2e6; padding-top: 15px;}
+        .modal-footer button { margin-left: 10px; }
+        
+        .mapping-container { display: flex; gap: 20px; }
+        .mapping-column { flex: 1; background: #f8f9fa; padding: 15px; border-radius: 5px; border: 1px solid #ddd; }
+        .mapping-column h4 { margin-bottom: 10px; font-size: 16px; }
+        .mapping-column ul { height: 250px; overflow-y: auto; border: 1px solid #eee; padding: 10px;}
+        .mapping-column ul li { padding: 5px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- LNB -->
+        <nav class="lnb">
+            <div class="lnb-header"><h1>DWP 관리 시스템</h1></div>
+            <div>
+                <div class="menu-category">공통항목</div>
+                <ul class="lnb-menu">
+                    <li><a href="#" data-target="login-page">로그인 화면</a></li>
+                    <li class="active"><a href="#" data-target="dashboard-page">메인 (대시보드)</a></li>
+                </ul>
+                <div class="menu-category">권한항목</div>
+                <ul class="lnb-menu">
+                    <li class="has-submenu">
+                        <a href="#">회사정보</a>
+                        <ul class="submenu">
+                            <li><a href="#" data-target="company-list-page">회사 목록</a></li>
+                            <li><a href="#" data-target="department-list-page">부서 목록</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#">시스템 역할 할당</a>
+                        <ul class="submenu">
+                            <li><a href="#" data-target="tenant-admin-list-page">테넌트 관리자</a></li>
+                            <li><a href="#" data-target="company-admin-list-page">회사 관리자</a></li>
+                            <li><a href="#" data-target="dept-admin-list-page">부서 관리자</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#">업무롤 관리</a>
+                        <ul class="submenu">
+                            <li><a href="#" data-target="role-list-page">롤 목록 및 연결</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#">사용량 및 빌링</a>
+                        <ul class="submenu">
+                            <li><a href="#" data-target="billing-tenant-page">테넌트 전체 현황</a></li>
+                            <li><a href="#" data-target="billing-company-page">회사별 사용현황</a></li>
+                            <li><a href="#" data-target="billing-dept-page">부서별 이용 현황</a></li>
+                            <li><a href="#" data-target="billing-agent-page">비서별 이용통계</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="menu-category">관리항목</div>
+                 <ul class="lnb-menu">
+                     <li class="has-submenu">
+                        <a href="#">알림 관리</a>
+                        <ul class="submenu">
+                            <li><a href="#" data-target="notification-log-page">알림 로그 관리</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#">보안 및 감사</a>
+                        <ul class="submenu">
+                            <li><a href="#" data-target="audit-ip-page">아이피 접근 제어 로그</a></li>
+                            <li><a href="#" data-target="audit-forbidden-word-page">금칙어 시도 로그</a></li>
+                            <li><a href="#" data-target="audit-file-upload-page">파일 업로드 로그</a></li>
+                            <li><a href="#" data-target="audit-permission-change-page">권한 변경 로그</a></li>
+                            <li><a href="#" data-target="audit-login-page">회원 로그인 로그</a></li>
+                            <li><a href="#" data-target="audit-agent-setting-page">비서 설정 로그</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#">공지 관리</a>
+                        <ul class="submenu">
+                            <li><a href="#" data-target="notice-list-page">공지사항 목록</a></li>
+                            <li><a href="#" data-target="notice-console-page">콘솔 공지 목록</a></li>
+                        </ul>
+                    </li>
+                     <li class="has-submenu">
+                        <a href="#">맞춤설정</a>
+                        <ul class="submenu">
+                            <li><a href="#" data-target="custom-setting-page">웍스/테넌트 설정</a></li>
+                        </ul>
+                    </li>
+                     <li class="has-submenu">
+                        <a href="#">이용가이드 FAQ</a>
+                        <ul class="submenu">
+                            <li><a href="#" data-target="faq-list-page">FAQ 목록</a></li>
+                        </ul>
+                    </li>
+                 </ul>
+            </div>
+        </nav>
+
+        <!-- 메인 콘텐츠 -->
+        <main class="content">
+            <div id="login-page" class="page-content">
+                <div class="page-header"><h2>로그인</h2><p class="description">로그인 방식 구분: SLO 로그인, 아이디/패스워드 로그인</p></div>
+                <div class="form-section">
+                     <h3>아이디/패스워드 로그인</h3>
+                     <div class="form-group"><label>회사선택</label><select><option>한화시스템/ICT</option></select></div>
+                     <div class="form-group"><label>아이디</label><input type="text"></div>
+                      <div class="form-group"><label>패스워드</label><input type="password"></div>
+                     <button>로그인</button>
+                </div>
+                 <div class="form-section">
+                     <h3>2차 인증</h3>
+                     <p>아이디 비밀번호로 로그인 한 후 이메일 인증을 통해 본인을 인증합니다.</p>
+                     <div class="form-group">
+                        <label>인증번호</label>
+                        <input type="text">
+                        <button style="margin-top:5px;">인증번호 받기</button>
+                     </div>
+                     <button>확인</button>
+                </div>
+            </div>
+
+            <div id="dashboard-page" class="page-content active">
+                <div class="page-header"><h2>대시보드</h2><p class="description">관리자의 권한에 따라 맞춤형 대시보드 화면이 노출됩니다.</p></div>
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <h3>관리자 및 권한 현황</h3>
+                         <ul>
+                           <li><b>내 권한 목록</b><ul style="margin-left:20px; margin-top:5px;"><li>회사 관리자 : 한화시스템/ICT</li><li>부서 관리자 : 플랫폼개발팀, 데이터분석팀</li></ul></li>
+                           <li style="margin-top:10px;"><b>한화시스템/ICT 총 사용자 :</b> 384 명</li>
+                           <li><b>플랫폼개발팀 총 사용자 :</b> 14 명</li>
+                           <li><b>데이터분석팀 총 사용자 :</b> 8 명</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>사용량 / 요금</h3>
+                        <ul>
+                           <li><b>활성 AI 비서:</b> 85 개</li>
+                           <li><b>전일 토큰 사용량:</b> 340,000 토큰</li>
+                           <li><b>월간 토큰 사용량:</b> 85,230,000 토큰</li>
+                           <li><b>회사 A 총 이용요금:</b> ₩ 8,500,000</li>
+                        </ul>
+                    </div>
+                     <div class="card">
+                        <h3>최근 감사 로그 (테넌트 관리자)</h3>
+                        <ul>
+                            <li>[권한 변경] '김한화'님이 '최플랫폼'님을 '플랫폼개발팀 부서 관리자'로 지정했습니다. (1시간 전)</li>
+                            <li>[파일 업로드] '박시스템'님이 '2025년 사업계획.pdf' 파일을 업로드했습니다. (3시간 전)</li>
+                            <li>[금칙어 시도] '나신입'님이 금칙어가 포함된 질문을 시도했습니다. (어제)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="company-list-page" class="page-content">
+                <div class="page-header"><h2>회사 목록</h2></div>
+                <table>
+                    <thead><tr><th>회사(워크스페이스)명</th><th>부서수</th><th>사용자수</th><th>월 전체 이용한도</th><th>월 사용자별 요금한도</th><th>서비스 이용</th></tr></thead>
+                    <tbody>
+                        <tr><td>한화시스템/ICT</td><td>15</td><td>384</td><td>1억 토큰</td><td>-</td><td>사용중</td></tr>
+                        <tr><td>한화에어로스페이스</td><td>22</td><td>512</td><td>-</td><td>10만 토큰</td><td>사용중</td></tr>
+                        <tr><td>한화솔루션</td><td>31</td><td>780</td><td>5억 토큰</td><td>-</td><td>사용중</td></tr>
+                        <tr><td>한화생명</td><td>50</td><td>1200</td><td>10억 토큰</td><td>-</td><td>사용중</td></tr>
+                        <tr><td>한화호텔앤드리조트</td><td>18</td><td>450</td><td>-</td><td>5만 토큰</td><td>사용중</td></tr>
+                        <tr><td>한화건설</td><td>25</td><td>600</td><td>3억 토큰</td><td>-</td><td>미사용</td></tr>
+                        <tr><td>한화임팩트</td><td>12</td><td>210</td><td>-</td><td>-</td><td>사용중</td></tr>
+                        <tr><td>한화정밀기계</td><td>16</td><td>330</td><td>-</td><td>10만 토큰</td><td>사용중</td></tr>
+                        <tr><td>한화갤러리아</td><td>20</td><td>480</td><td>1억 토큰</td><td>-</td><td>사용중</td></tr>
+                        <tr><td>한화자산운용</td><td>10</td><td>150</td><td>-</td><td>20만 토큰</td><td>사용중</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="department-list-page" class="page-content">
+                <div class="page-header"><h2>부서 목록</h2><p class="description">선택된 회사에 속한 부서 목록입니다.</p></div>
+                <table>
+                    <thead><tr><th>부서명(카테고리)</th><th>사용자수</th><th>월 전체 이용한도</th><th>월 사용자별 요금한도</th></tr></thead>
+                    <tbody>
+                        <tr><td>플랫폼개발팀</td><td>14</td><td>-</td><td>1,000,000 토큰</td></tr>
+                        <tr><td>인프라팀</td><td>23</td><td>5,000,000 토큰</td><td>-</td></tr>
+                        <tr><td>데이터분석팀</td><td>8</td><td>-</td><td>500,000 토큰</td></tr>
+                        <tr><td>인사팀</td><td>12</td><td>-</td><td>-</td></tr>
+                        <tr><td>재무팀</td><td>15</td><td>-</td><td>-</td></tr>
+                        <tr><td>마케팅팀</td><td>18</td><td>2,000,000 토큰</td><td>-</td></tr>
+                        <tr><td>영업1팀</td><td>25</td><td>-</td><td>-</td></tr>
+                        <tr><td>고객지원팀</td><td>30</td><td>-</td><td>-</td></tr>
+                        <tr><td>R&D센터</td><td>50</td><td>10,000,000 토큰</td><td>-</td></tr>
+                        <tr><td>전략기획팀</td><td>10</td><td>-</td><td>500,000 토큰</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="tenant-admin-list-page" class="page-content">
+                <div class="page-header"><h2>테넌트 관리자 할당</h2><p class="description">외부 조직도에서 사용자를 조회하여 테넌트 관리자 역할을 할당하고 관리합니다.</p></div>
+                <div class="toolbar"><button>테넌트 관리자 할당</button></div>
+                <table>
+                    <thead><tr><th>회사명</th><th>부서명</th><th>직책</th><th>이름(아이디)</th><th>역할 할당자</th><th>할당일</th></tr></thead>
+                    <tbody>
+                        <tr><td>한화시스템/ICT</td><td>플랫폼개발팀</td><td>팀장</td><td>김테넌트 (tenantkim)</td><td>최플랫폼 (platformchoi)</td><td>2025-09-01</td></tr>
+                        <tr><td>한화솔루션</td><td>IT기획팀</td><td>부장</td><td>오테넌트 (tenantoh)</td><td>최플랫폼 (platformchoi)</td><td>2025-08-15</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="company-admin-list-page" class="page-content">
+                 <div class="page-header"><h2>회사 관리자 할당</h2><p class="description">외부 조직도에서 사용자를 조회하여 회사 관리자 역할을 할당하고 관리합니다.</p></div>
+                <div class="toolbar"><button>회사 관리자 할당</button><select><option>부서</option><option>이름</option></select><input type="text" placeholder="검색..."><button>검색</button></div>
+                <table>
+                    <thead><tr><th>부서명</th><th>직책</th><th>이름(아이디)</th><th>역할 할당자</th><th>할당일</th><th>관리</th></tr></thead>
+                    <tbody>
+                         <tr><td>플랫폼개발팀</td><td>파트장</td><td>박회사 (companypark)</td><td>김테넌트 (tenantkim)</td><td>2025-09-05</td><td><button class="btn-sm">권한 수정</button> <button class="btn-sm btn-danger">할당 해제</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="dept-admin-list-page" class="page-content">
+                 <div class="page-header"><h2>부서 관리자 할당</h2><p class="description">외부 조직도에서 사용자를 조회하여 부서 관리자 역할을 할당하고 관리합니다.</p></div>
+                <div class="toolbar"><button>부서 관리자 할당</button><select><option>부서</option><option>이름</option></select><input type="text" placeholder="검색..."><button>검색</button></div>
+                <table>
+                     <thead><tr><th>부서명</th><th>직책</th><th>이름(아이디)</th><th>역할 할당자</th><th>할당일</th><th>관리</th></tr></thead>
+                    <tbody>
+                         <tr><td>인프라팀</td><td>사원</td><td>이부서 (deptlee)</td><td>박회사 (companypark)</td><td>2025-09-10</td><td><button class="btn-sm">권한 수정</button> <button class="btn-sm btn-danger">할당 해제</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="role-list-page" class="page-content">
+                <div class="page-header"><h2>업무롤 관리</h2><p class="description">DWP 시스템 내에서 사용할 논리적인 업무롤을 생성하고, 외부 시스템의 사용자와 퍼미션을 연결(매핑)합니다.</p></div>
+                <div class="toolbar"><button id="addRoleBtn">신규 롤 추가</button></div>
+                <table>
+                    <thead><tr><th>롤 이름</th><th>설명</th><th>부여된 사용자 수</th><th>연결된 퍼미션 수</th><th>관리</th></tr></thead>
+                    <tbody>
+                        <tr><td>공지사항 관리자 (인사팀)</td><td>인사팀의 공지사항을 작성하고 관리하는 역할</td><td>5</td><td>3</td><td><button class="btn-sm">수정</button> <button class="btn-sm linkRoleBtn">사용자/퍼미션 연결</button></td></tr>
+                        <tr><td>빌링 데이터 조회 (재무팀)</td><td>재무팀에서 빌링 데이터를 조회하는 역할</td><td>8</td><td>2</td><td><button class="btn-sm">수정</button> <button class="btn-sm linkRoleBtn">사용자/퍼미션 연결</button></td></tr>
+                        <tr><td>부서 관리자 (플랫폼개발)</td><td>플랫폼개발팀의 부서 관리 역할</td><td>1</td><td>10</td><td><button class="btn-sm">수정</button> <button class="btn-sm linkRoleBtn">사용자/퍼미션 연결</button></td></tr>
+                    </tbody>
+                </table>
+                 <div class="page-notes">
+                    <h4>비고</h4>
+                    <p>사용자 정보는 외부 조직도 시스템에서, 퍼미션 정보는 외부 퍼미션 관리 시스템(혹은 콘솔DB)에서 가져오며, DWP 관리 시스템은 '롤'을 기준으로 이 둘을 연결(매핑)하는 역할을 수행합니다.</p>
+                </div>
+            </div>
+            
+            <div id="billing-tenant-page" class="page-content">
+                <div class="page-header"><h2>테넌트 전체 현황</h2></div>
+                <table>
+                    <thead><tr><th>회사명</th><th>부서수</th><th>사용자 수</th><th>월 이용한도</th><th>사용량</th><th>과금 예정 내용</th></tr></thead>
+                    <tbody>
+                        <tr><td>한화시스템/ICT</td><td>15</td><td>384</td><td>1억 토큰</td><td>85,230,000 토큰</td><td>₩ 8,523,000</td></tr>
+                        <tr><td>한화에어로스페이스</td><td>22</td><td>512</td><td>-</td><td>1.2억 토큰</td><td>₩ 12,000,000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="billing-company-page" class="page-content">
+                 <div class="page-header"><h2>회사별 사용현황</h2></div>
+                 <table>
+                    <thead><tr><th>회사명</th><th>부서명</th><th>사용자 수</th><th>월 이용한도</th><th>사용량</th><th>과금 예정 내용</th></tr></thead>
+                     <tbody>
+                        <tr><td>한화시스템/ICT</td><td>플랫폼개발팀</td><td>14</td><td>-</td><td>12,345,000 토큰</td><td>₩ 1,234,500</td></tr>
+                        <tr><td>한화시스템/ICT</td><td>인프라팀</td><td>23</td><td>5,000,000 토큰</td><td>4,500,000 토큰</td><td>₩ 450,000</td></tr>
+                     </tbody>
+                </table>
+            </div>
+
+            <div id="billing-dept-page" class="page-content">
+                 <div class="page-header"><h2>부서별 이용 현황</h2></div>
+                 <table>
+                    <thead><tr><th>부서명</th><th>사용자 수</th><th>월 이용한도</th><th>사용량</th><th>과금 예정 내용</th></tr></thead>
+                    <tbody>
+                        <tr><td>플랫폼개발팀</td><td>14</td><td>-</td><td>12,345,000 토큰</td><td>₩ 1,234,500</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="billing-agent-page" class="page-content">
+                <div class="page-header"><h2>비서별 이용통계 상세</h2></div>
+                <table>
+                    <thead><tr><th>비서이름</th><th>비서소개</th><th>제작자</th><th>월 이용횟수</th></tr></thead>
+                    <tbody>
+                        <tr><td>연차 조회 비서</td><td>개인의 연차 현황을 알려줍니다.</td><td>김웍스</td><td>1,234회</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="notification-log-page" class="page-content">
+                <div class="page-header"><h2>알림 로그 관리</h2></div>
+                <table>
+                    <thead><tr><th>알림 종류</th><th>내용</th><th>시간</th><th>확인여부</th><th>확인시간</th></tr></thead>
+                    <tbody>
+                        <tr><td>공지</td><td>[긴급] 시스템 점검 안내</td><td>2025-09-18 10:00</td><td>Y</td><td>2025-09-18 10:05</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="audit-ip-page" class="page-content">
+                <div class="page-header"><h2>아이피 접근 제어 로그</h2></div>
+                 <table>
+                    <thead><tr><th>번호</th><th>아이피</th><th>최근 1시간동안 접속 횟수</th><th>마지막 접근 시도일시</th></tr></thead>
+                     <tbody><tr><td>1</td><td>211.123.45.67</td><td>15</td><td>2025-09-19 10:30:15</td></tr></tbody>
+                </table>
+            </div>
+            
+             <div id="audit-forbidden-word-page" class="page-content">
+                <div class="page-header"><h2>금칙어 시도 로그</h2></div>
+                 <table>
+                    <thead><tr><th>번호</th><th>금칙어</th><th>금칙어 위반 횟수</th><th>금칙어 등록자</th><th>금칙어 등록일</th></tr></thead>
+                    <tbody><tr><td>1</td><td>대외비</td><td>120</td><td>관리자</td><td>2025-01-01</td></tr></tbody>
+                </table>
+            </div>
+
+             <div id="audit-file-upload-page" class="page-content">
+                <div class="page-header"><h2>파일 업로드 로그</h2></div>
+                 <table>
+                    <thead><tr><th>번호</th><th>파일명</th><th>작업자</th><th>변경일시</th></tr></thead>
+                    <tbody><tr><td>1</td><td>2025년_사업계획.pdf</td><td>박시스템</td><td>2025-09-18 07:00:00</td></tr></tbody>
+                </table>
+            </div>
+             <div id="audit-permission-change-page" class="page-content">
+                <div class="page-header"><h2>권한 변경 로그</h2></div>
+                <table>
+                    <thead><tr><th>번호</th><th>이전 권한</th><th>변경권한</th><th>권한 변경자</th><th>변경일시</th></tr></thead>
+                    <tbody><tr><td>1</td><td>-</td><td>플랫폼개발팀 부서 관리자</td><td>김한화</td><td>2025-09-18 09:00:00</td></tr></tbody>
+                </table>
+            </div>
+             <div id="audit-login-page" class="page-content">
+                <div class="page-header"><h2>회원 로그인 로그</h2></div>
+                <table>
+                    <thead><tr><th>번호</th><th>아이디</th><th>로그인일시</th><th>로그인아이피</th><th>로그인 종류</th></tr></thead>
+                    <tbody><tr><td>1</td><td>testuser</td><td>2025-09-19 09:30:00</td><td>192.168.0.1</td><td>아이디/비번</td></tr></tbody>
+                </table>
+            </div>
+            <div id="audit-agent-setting-page" class="page-content">
+                <div class="page-header"><h2>비서 설정 로그</h2></div>
+                <table>
+                    <thead><tr><th>번호</th><th>이전 설정</th><th>변경 설정</th><th>변경자</th><th>변경일시</th></tr></thead>
+                    <tbody><tr><td>1</td><td>GPT-4</td><td>GPT-5</td><td>김관리</td><td>2025-09-17 14:00:00</td></tr></tbody>
+                </table>
+            </div>
+
+            <div id="notice-list-page" class="page-content">
+                <div class="page-header"><h2>공지 관리</h2></div>
+                 <div class="toolbar"><button>공지 등록</button></div>
+                 <table>
+                    <thead><tr><th>회사</th><th>카테고리</th><th>제목</th><th>상단고정</th><th>사용여부</th><th>첨부파일</th><th>관리</th></tr></thead>
+                    <tbody>
+                        <tr><td>전체</td><td>긴급</td><td>시스템 점검 안내</td><td>Y</td><td>Y</td><td>있음</td><td><button class="btn-sm">수정</button></td></tr>
+                        <tr><td>한화시스템/ICT</td><td>일반</td><td>10월 정기 업데이트 안내</td><td>N</td><td>Y</td><td>없음</td><td><button class="btn-sm">수정</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="notice-console-page" class="page-content">
+                <div class="page-header"><h2>콘솔 공지 목록</h2></div>
+                 <div class="toolbar"><input type="text" placeholder="검색..."><button>검색</button></div>
+                 <table>
+                    <thead><tr><th>제목</th><th>등록일</th></tr></thead>
+                    <tbody><tr><td>[업데이트] DWP 관리 시스템 v1.1 패치노트</td><td>2025-09-15</td></tr></tbody>
+                </table>
+            </div>
+             <div id="custom-setting-page" class="page-content">
+                <div class="page-header"><h2>맞춤설정</h2></div>
+                <div class="form-section"><h3>웍스 기본 설정</h3><p>API를 통해 웍스 기능 사용 여부를 설정합니다.</p></div>
+                <div class="form-section">
+                    <h3>테넌트 관리자 설정</h3>
+                    <div class="form-group"><label>인사말 목록</label><textarea>환영합니다!</textarea></div>
+                    <div class="form-group"><label>타임존</label><select><option>Asia/Seoul</option></select></div>
+                    <div class="form-group"><label>로케일</label><select><option>ko-KR</option></select></div>
+                    <button>저장</button>
+                </div>
+            </div>
+             <div id="faq-list-page" class="page-content">
+                <div class="page-header"><h2>FAQ 목록</h2></div>
+                <table>
+                    <thead><tr><th>카테고리</th><th>제목</th><th>등록일</th><th>관리</th></tr></thead>
+                    <tbody><tr><td>로그인</td><td>비밀번호를 잊어버렸어요.</td><td>2025-01-10</td><td><button class="btn-sm">수정</button></td></tr></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- 신규 롤 추가 모달 -->
+    <div id="addRoleModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>신규 롤 추가</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="form-group">
+                <label for="role-name">롤 이름</label>
+                <input type="text" id="role-name" placeholder="예: 공지사항 관리자 (인사팀)">
+            </div>
+            <div class="form-group">
+                <label for="role-desc">롤 설명</label>
+                <textarea id="role-desc" placeholder="이 롤의 역할에 대해 설명해주세요."></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary modal-close">취소</button>
+                <button id="saveRoleBtn">저장</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 사용자/퍼미션 연결 모달 -->
+    <div id="linkRoleModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="linkRoleModalTitle">롤 연결 설정</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="mapping-container">
+                <div class="mapping-column">
+                    <h4>사용자 목록 (조직도 연동)</h4>
+                     <input type="text" placeholder="사용자 검색..." style="width: 100%; margin-bottom: 10px;">
                     <ul>
-                        <li>1. 연차 조회 (350회)</li>
-                        <li>2. IT 헬프데스크 (280회)</li>
-                        <li>3. 법무 검토 요청 (150회)</li>
-                        <li>4. 회의실 예약 (120회)</li>
-                        <li>5. 출장비 정산 (95회)</li>
+                        <li><label><input type="checkbox" checked> 김인사 (hr_kim)</label></li>
+                        <li><label><input type="checkbox"> 이인사 (hr_lee)</label></li>
+                        <li><label><input type="checkbox" checked> 박인사 (hr_park)</label></li>
+                        <li><label><input type="checkbox" checked> 최인사 (hr_choi)</label></li>
+                        <li><label><input type="checkbox" checked> 정인사 (hr_jeong)</label></li>
+                        <li><label><input type="checkbox" checked> 홍인사 (hr_hong)</label></li>
+                        <li><label><input type="checkbox"> 윤인사 (hr_yoon)</label></li>
+                        <li><label><input type="checkbox"> 송인사 (hr_song)</label></li>
                     </ul>
                 </div>
-                <div class="agent-list">
-                    <h4>개선 필요 에이전트</h4>
+                <div class="mapping-column">
+                    <h4>퍼미션 목록 (외부 시스템 연동)</h4>
+                     <input type="text" placeholder="퍼미션 검색..." style="width: 100%; margin-bottom: 10px;">
                     <ul>
-                        <li>1. 사내 규정 검색 (5회)</li>
-                        <li>2. 주차 등록 안내 (8회)</li>
-                        <li>3. 경조사비 신청 (12회)</li>
-                        <li>4. 비품 신청 (15회)</li>
-                        <li>5. 사내 도서 검색 (21회)</li>
+                        <li><label><input type="checkbox" checked> 공지사항:읽기 (notice:read)</label></li>
+                        <li><label><input type="checkbox" checked> 공지사항:쓰기 (notice:write)</label></li>
+                        <li><label><input type="checkbox"> 공지사항:삭제 (notice:delete)</label></li>
+                        <li><label><input type="checkbox" checked> 공지사항:수정 (notice:update)</label></li>
+                        <li><label><input type="checkbox"> 빌링:조회 (billing:read)</label></li>
+                        <li><label><input type="checkbox"> 관리자:생성 (admin:create)</label></li>
+                        <li><label><input type="checkbox"> 관리자:조회 (admin:read)</label></li>
+                        <li><label><input type="checkbox"> 롤:관리 (role:manage)</label></li>
                     </ul>
                 </div>
             </div>
-        </div>
-
-        <div class="card">
-            <h3>사용량 및 빌링 요약</h3>
-            <p>이번 달 예상 과금</p>
-            <p class="value">₩ 85,230,000</p>
-            <hr style="margin: 15px 0;">
-            <ul>
-                <li><strong>전월 대비 사용량:</strong> ▲ 15.2%</li>
-                <li style="margin-top: 10px;"><strong>사용량 Top 3 부서:</strong>
-                    <ol style="margin-left: 20px;">
-                        <li>R&D 센터</li>
-                        <li>플랫폼개발팀</li>
-                        <li>데이터분석팀</li>
-                    </ol>
-                </li>
-            </ul>
-        </div>
-        
-        <!-- 2번째 행 -->
-        <div class="card">
-            <h3>최근 보안 및 감사 로그</h3>
-            <ul class="log-list">
-                <li class="log-permission">'김한화'님이 '최플랫폼'님을 부서 관리자로 지정 (1시간 전)</li>
-                <li class="log-security">'나신입'님이 금칙어 '대외비' 사용 시도 (어제)</li>
-                <li class="log-login">ID/PW 로그인 5회 연속 실패 (IP: 211.x.x.x)</li>
-                <li class="log-permission">'박회사'님이 '공지 관리자' 롤에 2명 추가 (2일 전)</li>
-                <li class="log-security">'김보안'님이 금칙어 '고객정보' 추가 (3일 전)</li>
-            </ul>
-        </div>
-        
-        <div class="card">
-            <h3>주요 공지 및 알림</h3>
-            <ul class="notice-list">
-                <li><span class="badge">긴급</span> 시스템 점검 안내 (2025-09-18 10:00)</li>
-                <li>[업데이트] DWP 관리 시스템 v1.1 패치노트 (2025-09-15 09:00)</li>
-                <li>[안내] DWP 서비스 이용약관 변경 안내 (2025-09-01 09:00)</li>
-            </ul>
-        </div>
-        
-        <div class="card">
-             <h3>관리자 지정 히스토리</h3>
-             <table>
-                <thead><tr><th>구분</th><th>대상자</th><th>지정일</th></tr></thead>
-                <tbody>
-                    <tr><td>부서 관리자</td><td>이부서(deptlee)</td><td>2025-09-10</td></tr>
-                    <tr><td>회사 관리자</td><td>박회사(companypark)</td><td>2025-09-05</td></tr>
-                    <tr><td>테넌트 관리자</td><td>김테넌트(tenantkim)</td><td>2025-09-01</td></tr>
-                </tbody>
-             </table>
+            <div class="modal-footer">
+                <button class="btn-secondary modal-close">취소</button>
+                <button id="saveLinkBtn">연결 정보 저장</button>
+            </div>
         </div>
     </div>
-</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // LNB 및 페이지 전환 로직
+            const lnbLinks = document.querySelectorAll('.lnb a');
+            const pageContents = document.querySelectorAll('.page-content');
+            const submenuParents = document.querySelectorAll('.lnb .has-submenu');
+
+            function switchPage(targetId) {
+                pageContents.forEach(page => { page.classList.remove('active'); });
+                const targetPage = document.getElementById(targetId);
+                if (targetPage) { targetPage.classList.add('active'); }
+            }
+
+            function updateActiveMenu(clickedLink) {
+                document.querySelectorAll('.lnb-menu li').forEach(li => li.classList.remove('active'));
+                let current = clickedLink.parentElement;
+                while (current && current.matches('li, .submenu')) {
+                    if (current.matches('li')) current.classList.add('active');
+                    current = current.parentElement;
+                }
+            }
+
+            submenuParents.forEach(li => {
+                const anchor = li.querySelector('a');
+                anchor.addEventListener('click', function (e) {
+                    e.currentTarget.parentElement.classList.toggle('active');
+                });
+            });
+
+            lnbLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.dataset.target;
+                    if (targetId) {
+                        switchPage(targetId);
+                        updateActiveMenu(this);
+                    }
+                });
+            });
+
+            // 모달 관련 스크립트
+            const addRoleModal = document.getElementById('addRoleModal');
+            const linkRoleModal = document.getElementById('linkRoleModal');
+            const addRoleBtn = document.getElementById('addRoleBtn');
+            const linkRoleBtns = document.querySelectorAll('.linkRoleBtn');
+            const modalCloses = document.querySelectorAll('.modal-close');
+
+            if (addRoleBtn) {
+                addRoleBtn.addEventListener('click', () => {
+                    addRoleModal.classList.add('show');
+                });
+            }
+
+            linkRoleBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const roleName = e.target.closest('tr').querySelector('td:first-child').textContent;
+                    document.getElementById('linkRoleModalTitle').textContent = `'${roleName}' 사용자/퍼미션 연결`;
+                    linkRoleModal.classList.add('show');
+                });
+            });
+
+            modalCloses.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.target.closest('.modal-overlay').classList.remove('show');
+                });
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target.classList.contains('modal-overlay')) {
+                    e.target.classList.remove('show');
+                }
+            });
+
+            document.getElementById('saveRoleBtn').addEventListener('click', () => {
+                alert('신규 롤이 저장되었습니다. (데모)');
+                addRoleModal.classList.remove('show');
+            });
+
+            document.getElementById('saveLinkBtn').addEventListener('click', () => {
+                alert('연결 정보가 저장되었습니다. (데모)');
+                linkRoleModal.classList.remove('show');
+            });
+            
+            const initialTarget = document.querySelector('.lnb li.active a')?.dataset.target || 'dashboard-page';
+            switchPage(initialTarget);
+        });
+    </script>
+</body>
+</html>
