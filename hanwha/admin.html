@@ -1,0 +1,105 @@
+<div id="dashboard-page" class="page-content active">
+    <div class="page-header">
+        <h2>대시보드</h2>
+        <p class="description">시스템의 주요 현황을 요약하여 보여줍니다.</p>
+    </div>
+    <div class="dashboard-grid">
+        <!-- 1번째 행 -->
+        <div class="card">
+            <h3>관리자 및 권한 현황</h3>
+            <ul>
+                <li><b>내 권한 목록</b>
+                    <ul style="margin-left:20px; margin-top:5px;">
+                        <li>회사 관리자 : 한화시스템/ICT</li>
+                        <li>부서 관리자 : 플랫폼개발팀, 데이터분석팀</li>
+                    </ul>
+                </li>
+                <li style="margin-top:10px;"><b>한화시스템/ICT 총 사용자 :</b> 384 명</li>
+                <li><b>플랫폼개발팀 총 사용자 :</b> 14 명</li>
+                <li><b>데이터분석팀 총 사용자 :</b> 8 명</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>AI 에이전트 현황</h3>
+            <ul class="kpi-list">
+                <li><strong>총 에이전트:</strong> <span class="value">120</span> 개</li>
+                <li><strong>활성 에이전트:</strong> <span class="value">85</span> 개</li>
+                <li><strong>24시간 내 호출:</strong> <span class="value">1,234</span> 회</li>
+            </ul>
+            <hr style="margin: 15px 0;">
+            <div class="agent-list-container">
+                <div class="agent-list">
+                    <h4>Top 5 인기 에이전트</h4>
+                    <ul>
+                        <li>1. 연차 조회 (350회)</li>
+                        <li>2. IT 헬프데스크 (280회)</li>
+                        <li>3. 법무 검토 요청 (150회)</li>
+                        <li>4. 회의실 예약 (120회)</li>
+                        <li>5. 출장비 정산 (95회)</li>
+                    </ul>
+                </div>
+                <div class="agent-list">
+                    <h4>개선 필요 에이전트</h4>
+                    <ul>
+                        <li>1. 사내 규정 검색 (5회)</li>
+                        <li>2. 주차 등록 안내 (8회)</li>
+                        <li>3. 경조사비 신청 (12회)</li>
+                        <li>4. 비품 신청 (15회)</li>
+                        <li>5. 사내 도서 검색 (21회)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>사용량 및 빌링 요약</h3>
+            <p>이번 달 예상 과금</p>
+            <p class="value">₩ 85,230,000</p>
+            <hr style="margin: 15px 0;">
+            <ul>
+                <li><strong>전월 대비 사용량:</strong> ▲ 15.2%</li>
+                <li style="margin-top: 10px;"><strong>사용량 Top 3 부서:</strong>
+                    <ol style="margin-left: 20px;">
+                        <li>R&D 센터</li>
+                        <li>플랫폼개발팀</li>
+                        <li>데이터분석팀</li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- 2번째 행 -->
+        <div class="card">
+            <h3>최근 보안 및 감사 로그</h3>
+            <ul class="log-list">
+                <li class="log-permission">'김한화'님이 '최플랫폼'님을 부서 관리자로 지정 (1시간 전)</li>
+                <li class="log-security">'나신입'님이 금칙어 '대외비' 사용 시도 (어제)</li>
+                <li class="log-login">ID/PW 로그인 5회 연속 실패 (IP: 211.x.x.x)</li>
+                <li class="log-permission">'박회사'님이 '공지 관리자' 롤에 2명 추가 (2일 전)</li>
+                <li class="log-security">'김보안'님이 금칙어 '고객정보' 추가 (3일 전)</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>주요 공지 및 알림</h3>
+            <ul class="notice-list">
+                <li><span class="badge">긴급</span> 시스템 점검 안내 (2025-09-18 10:00)</li>
+                <li>[업데이트] DWP 관리 시스템 v1.1 패치노트 (2025-09-15 09:00)</li>
+                <li>[안내] DWP 서비스 이용약관 변경 안내 (2025-09-01 09:00)</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+             <h3>관리자 지정 히스토리</h3>
+             <table>
+                <thead><tr><th>구분</th><th>대상자</th><th>지정일</th></tr></thead>
+                <tbody>
+                    <tr><td>부서 관리자</td><td>이부서(deptlee)</td><td>2025-09-10</td></tr>
+                    <tr><td>회사 관리자</td><td>박회사(companypark)</td><td>2025-09-05</td></tr>
+                    <tr><td>테넌트 관리자</td><td>김테넌트(tenantkim)</td><td>2025-09-01</td></tr>
+                </tbody>
+             </table>
+        </div>
+    </div>
+</div>
