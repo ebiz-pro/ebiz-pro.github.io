@@ -926,6 +926,9 @@ let selectedUsers = new Map();
 if(tenantAdminAssignBtn) {
     tenantAdminAssignBtn.addEventListener('click', () => {
         assignTenantAdminModal.classList.add('show');
+        // ▼▼▼▼▼▼▼▼▼▼ 이 코드를 추가해주세요 ▼▼▼▼▼▼▼▼▼▼
+        orgTree.querySelector('ul').style.display = 'block'; 
+        // ▲▲▲▲▲▲▲▲▲▲ 여기까지 추가하시면 됩니다 ▲▲▲▲▲▲▲▲▲▲
     });
 }
 
