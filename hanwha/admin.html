@@ -144,6 +144,86 @@
 .agent-list { width: 50%; }
 .agent-list h4 { font-size: 15px; margin-bottom: 10px; color: #495057; }
 .agent-list ul li { font-size: 14px; margin-bottom: 5px; color: #6c757d; }  
+
+
+/* 트리형 조직도 및 관리자 할당 모달을 위한 CSS */
+.modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+.org-chart-container {
+    display: flex;
+    gap: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+.org-tree-wrapper {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    height: 400px;
+    overflow-y: auto;
+}
+.org-tree-wrapper input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.org-tree ul {
+    list-style: none;
+    padding-left: 20px;
+}
+.org-tree li {
+    margin-bottom: 5px;
+}
+.tree-node {
+    cursor: pointer;
+    position: relative;
+}
+.tree-node.is-folder::before {
+    content: '▶';
+    position: absolute;
+    left: -15px;
+    font-size: 10px;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+.tree-node.is-folder.open::before {
+    transform: rotate(90deg);
+}
+.tree-node .node-type-dept { color: #333; font-weight: bold; }
+.tree-node .node-type-user { color: #555; }
+.tree-node .user-position { color: #888; font-size: 12px; margin-left: 5px; }
+
+.org-tree ul { display: none; }
+.org-tree li.open > ul { display: block; }
+
+.selected-users-wrapper {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    height: 400px;
+}
+#selected-users-list {
+    height: 350px;
+    overflow-y: auto;
+}
+#selected-users-list li {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.remove-user-btn {
+    color: #dc3545;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+        
     </style>
 </head>
 <body>
@@ -653,7 +733,96 @@
             </div>
         </div>
     </div>
+<!-- 테넌트 관리자 할당 모달 -->
+<div id="assignTenantAdminModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>테넌트 관리자 할당</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="org-chart-container">
+                <div class="org-tree-wrapper">
+                    <h4>조직도 (사용자 선택)</h4>
+                    <input type="text" id="orgSearchInput" placeholder="부서 또는 이름으로 검색...">
+                    <div class="org-tree" id="orgTree">
+                        <ul>
+                            <li class="open">
+                                <span class="tree-node is-folder open" data-type="dept"><span class="node-type-dept">한화시스템/ICT</span></span>
+                                <ul>
+                                    <li class="open">
+                                        <span class="tree-node is-folder open" data-type="dept"><span class="node-type-dept">플랫폼개발팀</span></span>
+                                        <ul>
+                                            <li><span class="tree-node" data-type="user" data-name="김테넌트" data-id="tenantkim"><span class="node-type-user">김테넌트</span><span class="user-position">팀장</span></span></li>
+                                            <li><span class="tree-node" data-type="user" data-name="박회사" data-id="companypark"><span class="node-type-user">박회사</span><span class="user-position">파트장</span></span></li>
+                                            <li><span class="tree-node" data-type="user" data-name="강개발" data-id="devkang"><span class="node-type-user">강개발</span><span class="user-position">대리</span></span></li>
+                                            <li><span class="tree-node" data-type="user" data-name="최프론트" data-id="frontendchoi"><span class="node-type-user">최프론트</span><span class="user-position">사원</span></span></li>
+                                            <li><span class="tree-node" data-type="user" data-name="백엔드" data-id="backend"><span class="node-type-user">백엔드</span><span class="user-position">사원</span></span></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="tree-node is-folder" data-type="dept"><span class="node-type-dept">데이터분석팀</span></span>
+                                        <ul>
+                                            <li><span class="tree-node" data-type="user" data-name="오데이터" data-id="dataoh"><span class="node-type-user">오데이터</span><span class="user-position">과장</span></span></li>
+                                            <li><span class="tree-node" data-type="user" data-name="김분석" data-id="analysiskim"><span class="node-type-user">김분석</span><span class="user-position">사원</span></span></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="tree-node is-folder" data-type="dept"><span class="node-type-dept">인프라팀</span></span>
+                                        <ul>
+                                            <li><span class="tree-node" data-type="user" data-name="이부서" data-id="deptlee"><span class="node-type-user">이부서</span><span class="user-position">사원</span></span></li>
+                                            <li><span class="tree-node" data-type="user" data-name="서버관리" data-id="serveradmin"><span class="node-type-user">서버관리</span><span class="user-position">대리</span></span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                             <li>
+                                <span class="tree-node is-folder" data-type="dept"><span class="node-type-dept">한화솔루션</span></span>
+                                <ul>
+                                     <li><span class="tree-node is-folder" data-type="dept"><span class="node-type-dept">IT기획팀</span></span>
+                                        <ul>
+                                            <li><span class="tree-node" data-type="user" data-name="오테넌트" data-id="tenantoh"><span class="node-type-user">오테넌트</span><span class="user-position">부장</span></span></li>
+                                            <li><span class="tree-node" data-type="user" data-name="기획자" data-id="planner"><span class="node-type-user">기획자</span><span class="user-position">과장</span></span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                             <li>
+                                <span class="tree-node is-folder" data-type="dept"><span class="node-type-dept">한화에어로스페이스</span></span>
+                                <ul>
+                                    <li><span class="tree-node is-folder" data-type="dept"><span class="node-type-dept">항공사업부</span></span>
+                                         <ul>
+                                            <li><span class="tree-node" data-type="user" data-name="나항공" data-id="airna"><span class="node-type-user">나항공</span><span class="user-position">차장</span></span></li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="tree-node is-folder" data-type="dept"><span class="node-type-dept">방산사업부</span></span>
+                                         <ul>
+                                            <li><span class="tree-node" data-type="user" data-name="김방산" data-id="defensekim"><span class="node-type-user">김방산</span><span class="user-position">부장</span></span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="selected-users-wrapper">
+                    <h4>선택된 사용자</h4>
+                    <ul id="selected-users-list">
+                        <!-- 선택된 사용자가 여기에 추가됩니다. -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-secondary modal-close">취소</button>
+            <button id="assignAdminBtn">역할 할당</button>
+        </div>
+    </div>
+</div>
 
+
+
+    
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // LNB 및 페이지 전환 로직
@@ -740,6 +909,127 @@
             const initialTarget = document.querySelector('.lnb li.active a')?.dataset.target || 'dashboard-page';
             switchPage(initialTarget);
         });
+
+
+        // ==================== ▼ 아래 코드를 기존 <script> 태그 맨 아래에 추가하세요. ▼ ====================
+
+// 테넌트 관리자 할당 모달 관련 스크립트
+const assignTenantAdminModal = document.getElementById('assignTenantAdminModal');
+const tenantAdminAssignBtn = document.querySelector('#tenant-admin-list-page button');
+const orgTree = document.getElementById('orgTree');
+const selectedUsersList = document.getElementById('selected-users-list');
+const orgSearchInput = document.getElementById('orgSearchInput');
+
+let selectedUsers = new Map();
+
+// '테넌트 관리자 할당' 버튼 클릭 시 모달 열기
+if(tenantAdminAssignBtn) {
+    tenantAdminAssignBtn.addEventListener('click', () => {
+        assignTenantAdminModal.classList.add('show');
+    });
+}
+
+// 트리 노드 클릭 이벤트 (펼치기/닫기)
+if (orgTree) {
+    orgTree.addEventListener('click', (e) => {
+        const target = e.target.closest('.tree-node');
+        if (!target) return;
+
+        const parentLi = target.parentElement;
+
+        if (target.classList.contains('is-folder')) {
+            target.classList.toggle('open');
+            parentLi.classList.toggle('open');
+        } else if (target.dataset.type === 'user') {
+            // 사용자 선택/해제
+            const userId = target.dataset.id;
+            const userName = target.dataset.name;
+            if (selectedUsers.has(userId)) {
+                selectedUsers.delete(userId);
+                target.style.backgroundColor = '';
+            } else {
+                selectedUsers.set(userId, userName);
+                target.style.backgroundColor = '#d0e9ff';
+            }
+            renderSelectedUsers();
+        }
+    });
+}
+
+// 선택된 사용자 목록 렌더링
+function renderSelectedUsers() {
+    selectedUsersList.innerHTML = '';
+    selectedUsers.forEach((name, id) => {
+        const li = document.createElement('li');
+        li.innerHTML = `<span>${name} (${id})</span><span class="remove-user-btn" data-id="${id}">&times;</span>`;
+        selectedUsersList.appendChild(li);
+    });
+}
+
+// 선택된 사용자 목록에서 제거
+selectedUsersList.addEventListener('click', e => {
+    if (e.target.classList.contains('remove-user-btn')) {
+        const userId = e.target.dataset.id;
+        selectedUsers.delete(userId);
+        // 조직도에서 선택 효과 제거
+        const userNode = orgTree.querySelector(`.tree-node[data-id="${userId}"]`);
+        if(userNode) userNode.style.backgroundColor = '';
+        renderSelectedUsers();
+    }
+});
+
+// 조직도 검색 기능
+if (orgSearchInput) {
+    orgSearchInput.addEventListener('keyup', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        const allNodes = orgTree.querySelectorAll('li');
+        
+        allNodes.forEach(li => {
+            const nodeSpan = li.querySelector('.tree-node');
+            const nodeText = nodeSpan.textContent.toLowerCase();
+            const isMatch = nodeText.includes(searchTerm);
+            
+            li.style.display = isMatch ? '' : 'none';
+            
+            // 검색어와 일치하는 경우 상위 노드를 모두 열어줌
+            if (isMatch && searchTerm) {
+                let parent = li.parentElement.closest('li');
+                while(parent) {
+                    parent.style.display = '';
+                    parent.classList.add('open');
+                    parent.querySelector('.tree-node.is-folder').classList.add('open');
+                    parent = parent.parentElement.closest('li');
+                }
+            } else if (!searchTerm) {
+                 li.style.display = ''; // 검색어 없으면 모두 표시
+            }
+        });
+    });
+}
+
+// 역할 할당 버튼 데모
+document.getElementById('assignAdminBtn').addEventListener('click', () => {
+    if (selectedUsers.size === 0) {
+        alert('할당할 사용자를 선택해주세요.');
+        return;
+    }
+    const userNames = Array.from(selectedUsers.values()).join(', ');
+    alert(`[${userNames}] 님에게 테넌트 관리자 역할이 할당되었습니다. (데모)`);
+    selectedUsers.clear();
+    renderSelectedUsers();
+    // 조직도 선택 효과 초기화
+    orgTree.querySelectorAll('.tree-node[data-type="user"]').forEach(node => node.style.backgroundColor = '');
+    assignTenantAdminModal.classList.remove('show');
+});
+
+// '테넌트 관리자 할당' 모달 닫기
+assignTenantAdminModal.querySelector('.modal-close').addEventListener('click', () => {
+    assignTenantAdminModal.classList.remove('show');
+});
     </script>
+
+
+
+    
 </body>
 </html>
